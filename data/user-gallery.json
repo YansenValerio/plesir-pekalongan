@@ -1,0 +1,200 @@
+[
+  {
+    "id": "ug-001",
+    "username": "@traveller_jane",
+    "user_avatar": "https://i.pravatar.cc/100?img=1",
+    "image": "https://source.unsplash.com/600x600/?batik,colorful",
+    "caption": "Cantiknya batik Pekalongan! Setiap motif punya cerita 🎨 #PlesirPekalongan #KotaBatik",
+    "likes": 234,
+    "posted_at": "2026-04-15T10:30:00Z",
+    "destinasi_tagged": "kampung-batik-kauman",
+    "hashtags": ["PlesirPekalongan", "KotaBatik", "BatikIndonesia"]
+  },
+  {
+    "id": "ug-002",
+    "username": "@adventure_dimas",
+    "user_avatar": "https://i.pravatar.cc/100?img=12",
+    "image": "https://source.unsplash.com/600x600/?beach,sunset",
+    "caption": "Sunset di Pasir Kencana never disappoints 🌅 Wajib datang kalau ke Pekalongan! #PlesirPekalongan",
+    "likes": 567,
+    "posted_at": "2026-04-12T17:45:00Z",
+    "destinasi_tagged": "pantai-pasir-kencana",
+    "hashtags": ["PlesirPekalongan", "Sunset", "PantaiIndonesia"]
+  },
+  {
+    "id": "ug-003",
+    "username": "@foodie_sarah",
+    "user_avatar": "https://i.pravatar.cc/100?img=5",
+    "image": "https://source.unsplash.com/600x600/?indonesian,soup",
+    "caption": "Tauto Bahari! Kuah taucony bikin nagih banget 🍜 #PlesirPekalongan #KulinerPekalongan",
+    "likes": 412,
+    "posted_at": "2026-04-10T13:20:00Z",
+    "destinasi_tagged": "tauto-pekalongan-bahari",
+    "hashtags": ["PlesirPekalongan", "KulinerPekalongan", "Tauto"]
+  },
+  {
+    "id": "ug-004",
+    "username": "@nina_traveldiary",
+    "user_avatar": "https://i.pravatar.cc/100?img=9",
+    "image": "https://source.unsplash.com/600x600/?mosque,architecture",
+    "caption": "Masjid Agung Al-Jami' — arsitektur yang memadukan Jawa, Arab, dan Tionghoa ❤️ #PlesirPekalongan",
+    "likes": 289,
+    "posted_at": "2026-04-08T16:00:00Z",
+    "destinasi_tagged": "masjid-agung-al-jami",
+    "hashtags": ["PlesirPekalongan", "WisataReligi", "Masjid"]
+  },
+  {
+    "id": "ug-005",
+    "username": "@batik_lover",
+    "user_avatar": "https://i.pravatar.cc/100?img=8",
+    "image": "https://source.unsplash.com/600x600/?batik,artisan",
+    "caption": "Workshop membatik di Kampung Kauman = pengalaman tak terlupakan! 🎨 Maestro Ibu Sulastri sabar banget ngajarin #PlesirPekalongan",
+    "likes": 678,
+    "posted_at": "2026-04-05T11:15:00Z",
+    "destinasi_tagged": "kampung-batik-kauman",
+    "hashtags": ["PlesirPekalongan", "WorkshopBatik", "BatikTulis"]
+  },
+  {
+    "id": "ug-006",
+    "username": "@explore_indonesia",
+    "user_avatar": "https://i.pravatar.cc/100?img=15",
+    "image": "https://source.unsplash.com/600x600/?indonesia,festival",
+    "caption": "Pekan Batik Nusantara — surga buat pecinta batik! Ada ribuan motif dari 34 provinsi 🇮🇩 #PlesirPekalongan",
+    "likes": 891,
+    "posted_at": "2026-04-02T09:30:00Z",
+    "destinasi_tagged": null,
+    "hashtags": ["PlesirPekalongan", "PekanBatik", "FestivalBudaya"]
+  },
+  {
+    "id": "ug-007",
+    "username": "@kuliner_nusantara",
+    "user_avatar": "https://i.pravatar.cc/100?img=20",
+    "image": "https://source.unsplash.com/600x600/?street-food,asia",
+    "caption": "Sego Megono pagi-pagi = the best way to start your day di Pekalongan 🍚 #PlesirPekalongan",
+    "likes": 345,
+    "posted_at": "2026-03-30T07:45:00Z",
+    "destinasi_tagged": null,
+    "hashtags": ["PlesirPekalongan", "Megono", "SarapanKhas"]
+  },
+  {
+    "id": "ug-008",
+    "username": "@solo_traveller_id",
+    "user_avatar": "https://i.pravatar.cc/100?img=33",
+    "image": "https://source.unsplash.com/600x600/?market,shopping",
+    "caption": "International Batik Center — bisa belanja sampe puas! Harga grosir, kualitas premium 🛍️ #PlesirPekalongan",
+    "likes": 523,
+    "posted_at": "2026-03-28T14:00:00Z",
+    "destinasi_tagged": "international-batik-center",
+    "hashtags": ["PlesirPekalongan", "BelanjaBatik", "OlehOleh"]
+  },
+  {
+    "id": "ug-009",
+    "username": "@photography_jeje",
+    "user_avatar": "https://i.pravatar.cc/100?img=14",
+    "image": "https://source.unsplash.com/600x600/?fishing,boat",
+    "caption": "Pagi-pagi di Pelabuhan Pekalongan — vibes nelayan yang otentik 📸 #PlesirPekalongan #StreetPhotography",
+    "likes": 267,
+    "posted_at": "2026-03-25T06:30:00Z",
+    "destinasi_tagged": null,
+    "hashtags": ["PlesirPekalongan", "StreetPhotography", "Pelabuhan"]
+  },
+  {
+    "id": "ug-010",
+    "username": "@keluarga_jalanjalan",
+    "user_avatar": "https://i.pravatar.cc/100?img=26",
+    "image": "https://source.unsplash.com/600x600/?museum,kids",
+    "caption": "Museum Batik = wisata edukatif yang seru buat anak! Mereka senang banget bisa coba membatik sendiri 👨‍👩‍👧 #PlesirPekalongan",
+    "likes": 432,
+    "posted_at": "2026-03-22T11:00:00Z",
+    "destinasi_tagged": "museum-batik-pekalongan",
+    "hashtags": ["PlesirPekalongan", "WisataKeluarga", "MuseumBatik"]
+  },
+  {
+    "id": "ug-011",
+    "username": "@batik_collector",
+    "user_avatar": "https://i.pravatar.cc/100?img=11",
+    "image": "https://source.unsplash.com/600x600/?textile,pattern",
+    "caption": "Koleksi batik Pekalongan terbaru! Motif pesisir yang khas dengan warna cerah ✨ #PlesirPekalongan",
+    "likes": 198,
+    "posted_at": "2026-03-20T15:30:00Z",
+    "destinasi_tagged": null,
+    "hashtags": ["PlesirPekalongan", "KoleksiBatik", "BatikPesisir"]
+  },
+  {
+    "id": "ug-012",
+    "username": "@penjelajah_jawa",
+    "user_avatar": "https://i.pravatar.cc/100?img=18",
+    "image": "https://source.unsplash.com/600x600/?indonesia,tradition",
+    "caption": "Syawalan di Krapyak! Lopis raksasa setinggi 2 meter dibagikan ke ribuan orang 🎉 Pengalaman langka! #PlesirPekalongan",
+    "likes": 1024,
+    "posted_at": "2026-04-17T10:00:00Z",
+    "destinasi_tagged": null,
+    "hashtags": ["PlesirPekalongan", "Syawalan", "TradisiUnik"]
+  },
+  {
+    "id": "ug-013",
+    "username": "@cafe_hopper",
+    "user_avatar": "https://i.pravatar.cc/100?img=24",
+    "image": "https://source.unsplash.com/600x600/?cafe,coffee",
+    "caption": "Kafe-kafe di Pekalongan punya vibe yang chill banget ☕ Perfect untuk nge-work atau santai #PlesirPekalongan",
+    "likes": 156,
+    "posted_at": "2026-03-15T14:45:00Z",
+    "destinasi_tagged": null,
+    "hashtags": ["PlesirPekalongan", "Kafe", "Coffee"]
+  },
+  {
+    "id": "ug-014",
+    "username": "@indonesia_heritage",
+    "user_avatar": "https://i.pravatar.cc/100?img=7",
+    "image": "https://source.unsplash.com/600x600/?heritage,building",
+    "caption": "Bangunan-bangunan kolonial di Pekalongan masih terawat dengan baik 🏛️ Hidden gem buat sejarah enthusiast! #PlesirPekalongan",
+    "likes": 378,
+    "posted_at": "2026-03-12T10:15:00Z",
+    "destinasi_tagged": null,
+    "hashtags": ["PlesirPekalongan", "Heritage", "Arsitektur"]
+  },
+  {
+    "id": "ug-015",
+    "username": "@yummy_indonesia",
+    "user_avatar": "https://i.pravatar.cc/100?img=29",
+    "image": "https://source.unsplash.com/600x600/?cake,traditional",
+    "caption": "Apem Kesesi! Manis legit, oleh-oleh wajib dari Pekalongan 🍰 #PlesirPekalongan #KulinerKhas",
+    "likes": 289,
+    "posted_at": "2026-03-10T08:30:00Z",
+    "destinasi_tagged": null,
+    "hashtags": ["PlesirPekalongan", "Apem", "OlehOleh"]
+  },
+  {
+    "id": "ug-016",
+    "username": "@pesona_jateng",
+    "user_avatar": "https://i.pravatar.cc/100?img=32",
+    "image": "https://source.unsplash.com/600x600/?waterfall,green",
+    "caption": "Curug Bajing di Petungkriyono — surga tersembunyi di selatan Pekalongan! 💧 Sejuk dan eksotis #PlesirPekalongan",
+    "likes": 645,
+    "posted_at": "2026-03-08T13:00:00Z",
+    "destinasi_tagged": null,
+    "hashtags": ["PlesirPekalongan", "HiddenGems", "Curug"]
+  },
+  {
+    "id": "ug-017",
+    "username": "@batikholic",
+    "user_avatar": "https://i.pravatar.cc/100?img=35",
+    "image": "https://source.unsplash.com/600x600/?fashion,batik",
+    "caption": "Fashion show batik di Pekan Batik 2025 — kreatifitas designer lokal level dewa! 👗 #PlesirPekalongan",
+    "likes": 712,
+    "posted_at": "2026-03-05T19:30:00Z",
+    "destinasi_tagged": null,
+    "hashtags": ["PlesirPekalongan", "FashionShow", "BatikModern"]
+  },
+  {
+    "id": "ug-018",
+    "username": "@wisata_religi",
+    "user_avatar": "https://i.pravatar.cc/100?img=42",
+    "image": "https://source.unsplash.com/600x600/?prayer,islamic",
+    "caption": "Ziarah ke Makam Habib Sapuro — tempat yang sangat tenang dan teduh 🤲 #PlesirPekalongan #WisataReligi",
+    "likes": 234,
+    "posted_at": "2026-03-02T16:45:00Z",
+    "destinasi_tagged": null,
+    "hashtags": ["PlesirPekalongan", "WisataReligi", "Ziarah"]
+  }
+]

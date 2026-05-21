@@ -1,0 +1,252 @@
+[
+  {
+    "id": "faq-001",
+    "kategori": "umum",
+    "pertanyaan": "Apa saja keunikan Kota Pekalongan dibanding kota lain?",
+    "pertanyaan_en": "What makes Pekalongan unique compared to other cities?",
+    "jawaban": "Pekalongan dikenal sebagai 'Kota Batik Dunia' yang diakui UNESCO sebagai Creative City of Crafts and Folk Art sejak 2014. Selain batik, Pekalongan juga punya kuliner khas pesisir seperti Tauto, Megono, dan tradisi unik Syawalan dengan Lopis Raksasa.",
+    "jawaban_en": "Pekalongan is known as the 'World Batik City', recognized by UNESCO as a Creative City of Crafts and Folk Art since 2014. Besides batik, Pekalongan offers signature coastal cuisine like Tauto, Megono, and the unique Syawalan tradition with Giant Lopis.",
+    "urutan": 1,
+    "is_popular": true
+  },
+  {
+    "id": "faq-002",
+    "kategori": "umum",
+    "pertanyaan": "Kapan waktu terbaik berkunjung ke Pekalongan?",
+    "pertanyaan_en": "When is the best time to visit Pekalongan?",
+    "jawaban": "Waktu terbaik adalah musim kemarau (April-September) ketika cuaca cerah ideal untuk wisata pantai. Untuk pengalaman budaya, kunjungi saat Pekan Batik Nusantara (Oktober) atau Syawalan (1 minggu setelah Idul Fitri).",
+    "jawaban_en": "Best time is the dry season (April-September) with ideal sunny weather for beach activities. For cultural experiences, visit during Pekan Batik Nusantara (October) or Syawalan (1 week after Eid al-Fitr).",
+    "urutan": 2,
+    "is_popular": true
+  },
+  {
+    "id": "faq-003",
+    "kategori": "transportasi",
+    "pertanyaan": "Bagaimana cara menuju Pekalongan dari Jakarta?",
+    "pertanyaan_en": "How to get to Pekalongan from Jakarta?",
+    "jawaban": "Beberapa opsi: (1) Kereta api: KA Argo Sindoro/Tawang Jaya/Sembrani dari Gambir/Senen, durasi 4-5 jam, harga Rp 200rb-500rb. (2) Bus: dari Terminal Pulogebang, durasi 6-8 jam, harga Rp 150rb-300rb. (3) Mobil pribadi via Tol Trans Jawa, durasi 5-6 jam. Pekalongan belum punya bandara, tapi bisa via Bandara Ahmad Yani Semarang lalu 2 jam darat.",
+    "jawaban_en": "Several options: (1) Train: Argo Sindoro/Tawang Jaya/Sembrani from Gambir/Senen, 4-5 hours, Rp 200k-500k. (2) Bus: from Pulogebang Terminal, 6-8 hours, Rp 150k-300k. (3) Private car via Trans-Java Toll Road, 5-6 hours. Pekalongan has no airport, but you can fly to Ahmad Yani Airport Semarang then 2 hours by land.",
+    "urutan": 1,
+    "is_popular": true
+  },
+  {
+    "id": "faq-004",
+    "kategori": "transportasi",
+    "pertanyaan": "Transportasi apa saja yang tersedia di dalam Kota Pekalongan?",
+    "pertanyaan_en": "What transportation options are available within Pekalongan?",
+    "jawaban": "Pilihan transport dalam kota: (1) Becak motor (Bentor) - khas Pekalongan, Rp 10rb-25rb sekali jalan. (2) Ojek online (Gojek/Grab) - paling praktis untuk wisatawan. (3) Angkutan kota - murah tapi rute terbatas. (4) Sewa motor - Rp 75rb-100rb/hari di banyak rental. (5) Sewa mobil + driver - Rp 500rb-800rb/hari, ideal untuk keluarga.",
+    "jawaban_en": "In-city transport options: (1) Motor becak (Bentor) - Pekalongan signature, Rp 10k-25k per trip. (2) Online motorbike (Gojek/Grab) - most practical for tourists. (3) City angkot - cheap but limited routes. (4) Motorcycle rental - Rp 75k-100k/day at many rentals. (5) Car + driver rental - Rp 500k-800k/day, ideal for families.",
+    "urutan": 2,
+    "is_popular": true
+  },
+  {
+    "id": "faq-005",
+    "kategori": "akomodasi",
+    "pertanyaan": "Hotel apa saja yang direkomendasikan di Pekalongan?",
+    "pertanyaan_en": "What hotels are recommended in Pekalongan?",
+    "jawaban": "Hotel pilihan berdasarkan budget: BUDGET (Rp 150-300rb): Hotel Hayam Wuruk, Hotel Marlin. MIDRANGE (Rp 300-600rb): Hotel Dafam Pekalongan, Hotel Pesonna. PREMIUM (Rp 600rb+): The Sidji Hotel, Horison Pekalongan. Untuk pengalaman lokal, coba homestay di Kampung Batik Kauman.",
+    "jawaban_en": "Hotel options by budget: BUDGET (Rp 150-300k): Hotel Hayam Wuruk, Hotel Marlin. MIDRANGE (Rp 300-600k): Hotel Dafam Pekalongan, Hotel Pesonna. PREMIUM (Rp 600k+): The Sidji Hotel, Horison Pekalongan. For a local experience, try homestays in Kampung Batik Kauman.",
+    "urutan": 1,
+    "is_popular": true
+  },
+  {
+    "id": "faq-006",
+    "kategori": "akomodasi",
+    "pertanyaan": "Apakah ada homestay atau penginapan budget di Pekalongan?",
+    "pertanyaan_en": "Are there homestays or budget accommodations in Pekalongan?",
+    "jawaban": "Ya, banyak pilihan budget: Homestay di Kampung Batik Kauman (Rp 100-250rb), Guest house di sekitar Stasiun (Rp 150-300rb), Hostel modern seperti Bobobox Pekalongan (Rp 80-150rb). Booking via Airbnb, Traveloka, atau Booking.com.",
+    "jawaban_en": "Yes, many budget options: Homestays in Kampung Batik Kauman (Rp 100-250k), Guest houses near the Station (Rp 150-300k), Modern hostels like Bobobox Pekalongan (Rp 80-150k). Book via Airbnb, Traveloka, or Booking.com.",
+    "urutan": 2,
+    "is_popular": false
+  },
+  {
+    "id": "faq-007",
+    "kategori": "kuliner",
+    "pertanyaan": "Apa saja kuliner khas Pekalongan yang wajib dicoba?",
+    "pertanyaan_en": "What are the must-try Pekalongan specialties?",
+    "jawaban": "Wajib coba: (1) Tauto - soto khas dengan kuah tauco fermentasi. (2) Sego Megono - nasi dengan urap nangka muda. (3) Garang Asem Masin - olahan ayam asam pedas. (4) Pindang Tetel - sup ikan khas pesisir. (5) Apem Kesesi - kue tradisional. (6) Kerupuk Usek - kerupuk khas Pekalongan. (7) Limun Oriental - minuman bersejarah sejak 1920.",
+    "jawaban_en": "Must-try: (1) Tauto - signature soup with fermented tauco broth. (2) Sego Megono - rice with young jackfruit salad. (3) Garang Asem Masin - sour-spicy chicken. (4) Pindang Tetel - coastal fish soup. (5) Apem Kesesi - traditional cake. (6) Kerupuk Usek - signature crackers. (7) Limun Oriental - historic beverage since 1920.",
+    "urutan": 1,
+    "is_popular": true
+  },
+  {
+    "id": "faq-008",
+    "kategori": "kuliner",
+    "pertanyaan": "Apakah mudah mencari makanan halal di Pekalongan?",
+    "pertanyaan_en": "Is it easy to find halal food in Pekalongan?",
+    "jawaban": "Sangat mudah! Pekalongan adalah kota santri dengan mayoritas muslim. 99% restoran dan warung lokal menyajikan makanan halal. Untuk kepastian, cari sertifikat halal MUI di restoran besar atau bertanya langsung ke pemilik warung tradisional.",
+    "jawaban_en": "Very easy! Pekalongan is a santri city with a Muslim majority. 99% of local restaurants and warungs serve halal food. For certainty, look for MUI halal certificates at large restaurants or ask traditional warung owners directly.",
+    "urutan": 2,
+    "is_popular": true
+  },
+  {
+    "id": "faq-009",
+    "kategori": "budaya",
+    "pertanyaan": "Apa itu Sintren dan dimana bisa menonton pertunjukannya?",
+    "pertanyaan_en": "What is Sintren and where can I watch the performance?",
+    "jawaban": "Sintren adalah tarian mistis tradisional pesisir Pekalongan. Penari muda dimasukkan ke kurungan, lalu setelah ritual akan menari dalam keadaan trance. Pertunjukan bisa disaksikan di Festival Sintren (Mei tiap tahun), pertunjukan budaya di Museum Batik, atau event khusus di alun-alun.",
+    "jawaban_en": "Sintren is a traditional mystical dance from Pekalongan's coast. Young dancers are placed in a cage, then dance in trance after a ritual. Performances can be seen at the Sintren Festival (annually in May), cultural shows at the Batik Museum, or special events at the city square.",
+    "urutan": 1,
+    "is_popular": false
+  },
+  {
+    "id": "faq-010",
+    "kategori": "budaya",
+    "pertanyaan": "Bagaimana cara mengikuti workshop membatik?",
+    "pertanyaan_en": "How can I join a batik-making workshop?",
+    "jawaban": "Beberapa tempat menyediakan workshop: (1) Museum Batik Pekalongan - paket lengkap Rp 50-100rb, durasi 2-3 jam. (2) Kampung Batik Kauman - langsung dengan pengrajin, Rp 75-150rb. (3) Kampung Batik Pesindon - workshop intensif. Booking sehari sebelum via WhatsApp atau langsung datang pagi.",
+    "jawaban_en": "Several places offer workshops: (1) Pekalongan Batik Museum - complete package Rp 50-100k, 2-3 hours. (2) Kampung Batik Kauman - directly with artisans, Rp 75-150k. (3) Kampung Batik Pesindon - intensive workshop. Book one day ahead via WhatsApp or come directly in the morning.",
+    "urutan": 2,
+    "is_popular": true
+  },
+  {
+    "id": "faq-011",
+    "kategori": "keamanan",
+    "pertanyaan": "Apakah Pekalongan aman untuk wisatawan, termasuk solo traveler?",
+    "pertanyaan_en": "Is Pekalongan safe for tourists, including solo travelers?",
+    "jawaban": "Pekalongan sangat aman dengan tingkat kriminalitas rendah. Masyarakat ramah dan toleran. Solo traveler (termasuk perempuan) bisa berkunjung dengan nyaman. Tips: tetap waspada di tempat ramai, simpan dokumen penting di hotel, hindari area sepi malam hari, gunakan transport resmi.",
+    "jawaban_en": "Pekalongan is very safe with low crime rates. People are friendly and tolerant. Solo travelers (including women) can visit comfortably. Tips: stay alert in crowded areas, keep important documents at the hotel, avoid quiet areas at night, use official transport.",
+    "urutan": 1,
+    "is_popular": true
+  },
+  {
+    "id": "faq-012",
+    "kategori": "keamanan",
+    "pertanyaan": "Apa nomor darurat penting yang perlu disimpan?",
+    "pertanyaan_en": "What emergency numbers should I save?",
+    "jawaban": "Nomor darurat penting: Polisi 110, Ambulans 118, Damkar 113, BPBD Pekalongan 112. Untuk wisatawan, hubungi TIC Pekalongan di (0285) 421-XXXX (jam kerja). RSUD Bendan Pekalongan: (0285) 432-XXXX untuk IGD 24 jam.",
+    "jawaban_en": "Important emergency numbers: Police 110, Ambulance 118, Fire 113, BPBD Pekalongan 112. For tourists, contact TIC Pekalongan at (0285) 421-XXXX (business hours). RSUD Bendan Pekalongan: (0285) 432-XXXX for 24-hour ER.",
+    "urutan": 2,
+    "is_popular": true
+  },
+  {
+    "id": "faq-013",
+    "kategori": "wisata",
+    "pertanyaan": "Berapa hari ideal untuk wisata di Pekalongan?",
+    "pertanyaan_en": "How many days are ideal for visiting Pekalongan?",
+    "jawaban": "Rekomendasi: 2 hari (weekend trip) cukup untuk batik dan kuliner ikonik. 3 hari ideal untuk explore batik, kuliner, pantai, dan religi. 4-5 hari untuk pengalaman lengkap termasuk Petungkriyono (alam pegunungan). Sesuaikan dengan minat utama Anda.",
+    "jawaban_en": "Recommendations: 2 days (weekend trip) is enough for iconic batik and culinary. 3 days is ideal to explore batik, culinary, beach, and religious sites. 4-5 days for complete experience including Petungkriyono (mountain nature). Adjust to your main interests.",
+    "urutan": 1,
+    "is_popular": true
+  },
+  {
+    "id": "faq-014",
+    "kategori": "wisata",
+    "pertanyaan": "Apakah ada wisata ramah anak di Pekalongan?",
+    "pertanyaan_en": "Are there family-friendly attractions in Pekalongan?",
+    "jawaban": "Banyak! Rekomendasi ramah anak: Museum Batik (workshop interaktif), Pantai Pasir Kencana (main pasir + naik kuda), International Batik Center (food court + kid corner), Linggoasri Waterpark (kolam renang), Curug Bajing Petungkriyono (untuk anak yang suka alam). Kebanyakan punya fasilitas mushola, toilet, dan parkir luas.",
+    "jawaban_en": "Many! Family-friendly recommendations: Batik Museum (interactive workshop), Pasir Kencana Beach (sand play + horse riding), International Batik Center (food court + kid corner), Linggoasri Waterpark (swimming pool), Curug Bajing Petungkriyono (nature-loving kids). Most have mushola, toilets, and ample parking.",
+    "urutan": 2,
+    "is_popular": true
+  },
+  {
+    "id": "faq-015",
+    "kategori": "wisata",
+    "pertanyaan": "Apakah destinasi wisata ramah disabilitas?",
+    "pertanyaan_en": "Are tourist destinations disability-friendly?",
+    "jawaban": "Beberapa destinasi sudah ramah disabilitas: Museum Batik Pekalongan (ramp, toilet difabel, lift), Masjid Agung Al-Jami' (ramp), International Batik Center (lift, toilet difabel, kursi roda gratis). Sayangnya, destinasi alam seperti curug dan kampung batik tradisional masih terbatas aksesnya. Hubungi TIC untuk arrangement khusus.",
+    "jawaban_en": "Some destinations are disability-friendly: Pekalongan Batik Museum (ramp, accessible toilet, lift), Al-Jami' Grand Mosque (ramp), International Batik Center (lift, accessible toilet, free wheelchair). Unfortunately, nature destinations like waterfalls and traditional villages have limited access. Contact TIC for special arrangements.",
+    "urutan": 3,
+    "is_popular": false
+  },
+  {
+    "id": "faq-016",
+    "kategori": "tic",
+    "pertanyaan": "Dimana lokasi TIC Pekalongan?",
+    "pertanyaan_en": "Where is the Pekalongan TIC located?",
+    "jawaban": "TIC Pekalongan berlokasi di Jl. Wr. Supratman, Panjang Wetan, Kec. Pekalongan Utara, Kota Pekalongan, Jawa Tengah. Kami berada di kompleks Dinas Pariwisata Kota Pekalongan. Lokasi mudah diakses dengan ojek online atau angkutan umum.",
+    "jawaban_en": "Pekalongan TIC is located at Jl. Wr. Supratman, Panjang Wetan, Pekalongan Utara District, Pekalongan City, Central Java. We're in the Pekalongan Tourism Office complex. The location is easily accessible by online motorbike or public transport.",
+    "urutan": 1,
+    "is_popular": true
+  },
+  {
+    "id": "faq-017",
+    "kategori": "tic",
+    "pertanyaan": "Apa saja layanan yang disediakan TIC?",
+    "pertanyaan_en": "What services does the TIC provide?",
+    "jawaban": "Layanan TIC: (1) Info wisata gratis dan brosur destinasi. (2) Rekomendasi itinerary personal. (3) Booking tour guide bersertifikat. (4) Info event terkini. (5) Konsultasi UMKM batik. (6) Penanganan keluhan wisatawan. (7) Penghubung dengan layanan darurat. (8) Workshop pengenalan budaya.",
+    "jawaban_en": "TIC services: (1) Free tourist info and destination brochures. (2) Personal itinerary recommendations. (3) Certified tour guide booking. (4) Latest event info. (5) Batik SME consultation. (6) Tourist complaint handling. (7) Emergency service liaison. (8) Cultural introduction workshops.",
+    "urutan": 2,
+    "is_popular": true
+  },
+  {
+    "id": "faq-018",
+    "kategori": "tic",
+    "pertanyaan": "Kapan jam operasional TIC?",
+    "pertanyaan_en": "What are TIC's operating hours?",
+    "jawaban": "TIC Pekalongan buka Senin-Jumat pukul 08.00-17.00 WIB. Tutup hari Sabtu, Minggu, dan libur nasional. Untuk pertanyaan di luar jam kerja, silakan email atau DM Instagram @ticpekalongan — biasanya direspon dalam 24 jam.",
+    "jawaban_en": "Pekalongan TIC is open Monday-Friday 8 AM - 5 PM WIB. Closed Saturday, Sunday, and national holidays. For inquiries outside business hours, please email or DM Instagram @ticpekalongan — usually responded within 24 hours.",
+    "urutan": 3,
+    "is_popular": true
+  },
+  {
+    "id": "faq-019",
+    "kategori": "umum",
+    "pertanyaan": "Apakah perlu visa untuk wisatawan asing?",
+    "pertanyaan_en": "Do foreign tourists need a visa?",
+    "jawaban": "Tergantung kewarganegaraan. Wisatawan dari 169 negara bisa pakai Visa on Arrival (VOA) di bandara internasional Indonesia (USD 35), berlaku 30 hari. Beberapa negara ASEAN bebas visa. Cek detail di imigrasi.go.id atau hubungi Kedutaan Indonesia di negara Anda sebelum keberangkatan.",
+    "jawaban_en": "Depends on nationality. Tourists from 169 countries can use Visa on Arrival (VOA) at Indonesian international airports (USD 35), valid for 30 days. Some ASEAN countries are visa-free. Check details at imigrasi.go.id or contact Indonesian Embassy in your country before departure.",
+    "urutan": 3,
+    "is_popular": false
+  },
+  {
+    "id": "faq-020",
+    "kategori": "umum",
+    "pertanyaan": "Mata uang apa yang digunakan dan apakah ATM mudah ditemukan?",
+    "pertanyaan_en": "What currency is used and are ATMs easy to find?",
+    "jawaban": "Mata uang Indonesia adalah Rupiah (IDR). ATM mudah ditemukan di pusat kota, mall, bank-bank besar. ATM yang menerima kartu internasional: BCA, BNI, BRI, Mandiri, CIMB Niaga (cari logo VISA/Mastercard/Cirrus). Money changer tersedia di pusat kota. Disarankan tukar uang sebelum tiba untuk kurs terbaik.",
+    "jawaban_en": "Indonesian currency is Rupiah (IDR). ATMs are easy to find in city centers, malls, and major banks. International card-accepting ATMs: BCA, BNI, BRI, Mandiri, CIMB Niaga (look for VISA/Mastercard/Cirrus logos). Money changers available in city center. Recommended to exchange before arrival for best rates.",
+    "urutan": 4,
+    "is_popular": true
+  },
+  {
+    "id": "faq-021",
+    "kategori": "umum",
+    "pertanyaan": "Bagaimana koneksi internet di Pekalongan?",
+    "pertanyaan_en": "How is internet connectivity in Pekalongan?",
+    "jawaban": "Koneksi internet sangat baik di Pekalongan. WiFi gratis tersedia di hotel, kafe, mall, dan beberapa tempat wisata. Provider seluler utama (Telkomsel, Indosat, XL) punya sinyal kuat 4G/5G di seluruh kota. Beli SIM card lokal di konter resmi (sekitar Rp 50-100rb untuk paket data 30 hari).",
+    "jawaban_en": "Internet connection is very good in Pekalongan. Free WiFi available at hotels, cafes, malls, and some tourist spots. Major cellular providers (Telkomsel, Indosat, XL) have strong 4G/5G signal throughout the city. Buy local SIM card at official counters (around Rp 50-100k for 30-day data package).",
+    "urutan": 5,
+    "is_popular": false
+  },
+  {
+    "id": "faq-022",
+    "kategori": "wisata",
+    "pertanyaan": "Apakah ada tour guide berbahasa Inggris?",
+    "pertanyaan_en": "Are there English-speaking tour guides?",
+    "jawaban": "Ya, ada beberapa tour guide bersertifikat berbahasa Inggris. Hubungi TIC Pekalongan untuk booking. Tarif sekitar Rp 300-500rb/hari tergantung durasi dan rute. Beberapa hotel premium juga menyediakan concierge berbahasa Inggris. Untuk grup besar, bisa request guide multi-bahasa.",
+    "jawaban_en": "Yes, there are several certified English-speaking tour guides. Contact Pekalongan TIC for booking. Rate around Rp 300-500k/day depending on duration and route. Some premium hotels also provide English-speaking concierge. For large groups, multilingual guides can be requested.",
+    "urutan": 4,
+    "is_popular": false
+  },
+  {
+    "id": "faq-023",
+    "kategori": "transportasi",
+    "pertanyaan": "Apakah ada bandara di Pekalongan?",
+    "pertanyaan_en": "Is there an airport in Pekalongan?",
+    "jawaban": "Saat ini Pekalongan belum memiliki bandara komersial. Bandara terdekat adalah Bandara Ahmad Yani Semarang (sekitar 2 jam darat) dan Bandara Adi Soemarmo Solo (3 jam darat). Dari Jakarta, opsi kereta lebih praktis dan cepat dibanding pesawat.",
+    "jawaban_en": "Pekalongan currently has no commercial airport. Nearest airports are Ahmad Yani Airport Semarang (~2 hours by land) and Adi Soemarmo Airport Solo (3 hours by land). From Jakarta, train is more practical and faster than flying.",
+    "urutan": 3,
+    "is_popular": true
+  },
+  {
+    "id": "faq-024",
+    "kategori": "budaya",
+    "pertanyaan": "Bagaimana cara membedakan batik tulis, cap, dan printing?",
+    "pertanyaan_en": "How to distinguish handwritten, stamped, and printed batik?",
+    "jawaban": "Tips membedakan: BATIK TULIS - motif tidak simetris sempurna (handmade), bagian belakang sama jelas dengan depan (lilin tembus), harga Rp 500rb-jutaan, ada 'cantingan' kecil tidak rapi. BATIK CAP - motif berulang simetris, bagian belakang agak pudar, harga Rp 150-500rb. BATIK PRINTING - motif persis simetris, bagian belakang putih/pudar total, harga Rp 50-150rb.",
+    "jawaban_en": "How to differentiate: HANDWRITTEN BATIK - motifs not perfectly symmetrical (handmade), back side as clear as front (wax penetrates), Rp 500k-millions, has small irregular 'canting' marks. STAMPED BATIK - symmetrical repeated motifs, slightly faded back, Rp 150-500k. PRINTED BATIK - perfectly symmetrical motifs, completely white/faded back, Rp 50-150k.",
+    "urutan": 3,
+    "is_popular": true
+  },
+  {
+    "id": "faq-025",
+    "kategori": "umum",
+    "pertanyaan": "Bagaimana cuaca di Pekalongan sepanjang tahun?",
+    "pertanyaan_en": "What's the weather like in Pekalongan year-round?",
+    "jawaban": "Pekalongan beriklim tropis panas-lembab. MUSIM KEMARAU (April-September): cerah, suhu 26-33°C, ideal untuk semua aktivitas. MUSIM HUJAN (Oktober-Maret): hujan sore/malam, kelembaban tinggi, suhu 24-30°C. Bulan paling ekstrem: Desember-Februari (hujan deras), Agustus-September (paling kering & panas).",
+    "jawaban_en": "Pekalongan has a hot-humid tropical climate. DRY SEASON (April-September): sunny, 26-33°C, ideal for all activities. RAINY SEASON (October-March): afternoon/evening rain, high humidity, 24-30°C. Most extreme months: December-February (heavy rain), August-September (driest & hottest).",
+    "urutan": 6,
+    "is_popular": false
+  }
+]

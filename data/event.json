@@ -1,0 +1,250 @@
+[
+  {
+    "id": "pekan-batik-2026",
+    "slug": "pekan-batik-nusantara-2026",
+    "judul": "Pekan Batik Nusantara 2026",
+    "judul_en": "National Batik Week 2026",
+    "kategori": "budaya",
+    "status": "upcoming",
+    "tanggal_mulai": "2026-10-01",
+    "tanggal_selesai": "2026-10-07",
+    "waktu_mulai": "09:00",
+    "lokasi": {
+      "nama": "Lapangan Mataram & International Batik Center",
+      "alamat": "Jl. Mataram, Pekalongan",
+      "koordinat": { "lat": -6.8898, "lng": 109.6750 }
+    },
+    "poster": "https://source.unsplash.com/800x1000/?batik,festival",
+    "galeri": [
+      "https://source.unsplash.com/800x600/?batik,exhibition",
+      "https://source.unsplash.com/800x600/?fashion,show"
+    ],
+    "deskripsi_singkat": "Festival batik nasional tahunan terbesar di Indonesia, menampilkan ribuan motif dari seluruh nusantara.",
+    "deskripsi_singkat_en": "Indonesia's largest annual national batik festival, featuring thousands of motifs from across the archipelago.",
+    "deskripsi_lengkap": "Pekan Batik Nusantara 2026 adalah festival batik terbesar di Indonesia yang diadakan setiap tahun di Pekalongan sejak 2009. Acara ini menampilkan lebih dari 500 pengrajin batik dari 34 provinsi, dengan rangkaian acara meliputi pameran batik tematik, fashion show kelas internasional, lomba membatik antar pelajar, seminar budaya UNESCO, workshop interaktif untuk wisatawan, dan bazar UMKM dengan harga grosir. Tahun 2026 mengangkat tema 'Batik Pesisir: Warisan Maritim Nusantara'.",
+    "deskripsi_lengkap_en": "Pekan Batik Nusantara 2026 is Indonesia's largest annual batik festival, held in Pekalongan since 2009. This event features over 500 batik artisans from 34 provinces, with programs including thematic batik exhibitions, international fashion shows, student batik-making competitions, UNESCO cultural seminars, interactive workshops for tourists, and SME bazaars at wholesale prices. The 2026 theme is 'Coastal Batik: Maritime Heritage of the Archipelago'.",
+    "sejarah": "Pekan Batik Nusantara dimulai pada 2009 sebagai bentuk perayaan pengakuan batik sebagai Warisan Budaya Tak Benda oleh UNESCO. Setiap tahun, acara ini diselenggarakan oleh Pemkot Pekalongan bersama Asosiasi Pengrajin Batik Indonesia.",
+    "jadwal": [
+      {
+        "hari": 1,
+        "tanggal": "2026-10-01",
+        "acara": [
+          { "waktu": "09:00", "kegiatan": "Pembukaan oleh Walikota Pekalongan", "lokasi_detail": "Panggung Utama Lapangan Mataram" },
+          { "waktu": "10:30", "kegiatan": "Pawai Batik Akbar 1000 Peserta", "lokasi_detail": "Jl. Diponegoro - Lapangan Mataram" },
+          { "waktu": "14:00", "kegiatan": "Pembukaan Pameran Batik Pesisir", "lokasi_detail": "IBC Hall A" },
+          { "waktu": "19:00", "kegiatan": "Konser Budaya Sintren & Modern", "lokasi_detail": "Panggung Utama" }
+        ]
+      },
+      {
+        "hari": 2,
+        "tanggal": "2026-10-02",
+        "acara": [
+          { "waktu": "09:00", "kegiatan": "Workshop Membatik untuk Wisatawan", "lokasi_detail": "IBC Hall B" },
+          { "waktu": "13:00", "kegiatan": "Seminar UNESCO Creative City", "lokasi_detail": "Aula Pemkot" },
+          { "waktu": "19:00", "kegiatan": "Fashion Show: 'Batik Pesisir Kontemporer'", "lokasi_detail": "Catwalk IBC" }
+        ]
+      }
+    ],
+    "tiket": [
+      { "kategori": "Umum", "harga": 0, "fasilitas": ["Akses semua pameran", "Pawai pembukaan"], "tersedia": true },
+      { "kategori": "Workshop Pass", "harga": 50000, "fasilitas": ["Akses umum", "1x workshop membatik", "Take home batik karya sendiri"], "tersedia": true },
+      { "kategori": "VIP Fashion Show", "harga": 250000, "fasilitas": ["Akses umum", "Kursi VIP fashion show", "Goodie bag", "Welcome drink"], "tersedia": true }
+    ],
+    "penyelenggara": {
+      "nama": "Dinas Kebudayaan & Pariwisata Kota Pekalongan",
+      "telepon": "(0285) 421-XXXX",
+      "email": "info@plesirpekalongan.id",
+      "instagram": "@ticpekalongan"
+    },
+    "tips": [
+      "Datang hari pertama untuk pawai akbar yang spektakuler",
+      "Pakai pakaian batik untuk vibe yang sesuai",
+      "Booking workshop H-3 karena cepat penuh",
+      "Bawa dompet cukup — bazar UMKM penuh godaan",
+      "Hari terakhir biasanya ada flash sale harga grosir"
+    ],
+    "tips_en": [
+      "Come day 1 for the spectacular grand parade",
+      "Wear batik to match the vibe",
+      "Book workshops 3 days ahead — fills up fast",
+      "Bring enough cash — SME bazaar is full of temptations",
+      "Last day usually has wholesale flash sales"
+    ],
+    "youtube_live_url": null,
+    "youtube_live_active": false,
+    "tags": ["batik", "festival", "budaya", "unesco", "fashion"],
+    "related_events": ["festival-sintren-2026"]
+  },
+  {
+    "id": "syawalan-lopis-2026",
+    "slug": "syawalan-lopis-raksasa-krapyak-2026",
+    "judul": "Syawalan & Lopis Raksasa Krapyak",
+    "judul_en": "Syawalan Festival & Giant Lopis Krapyak",
+    "kategori": "keagamaan",
+    "status": "upcoming",
+    "tanggal_mulai": "2026-04-17",
+    "tanggal_selesai": "2026-04-17",
+    "waktu_mulai": "07:00",
+    "lokasi": {
+      "nama": "Kampung Krapyak Lor",
+      "alamat": "Kelurahan Krapyak Lor, Pekalongan Utara",
+      "koordinat": { "lat": -6.8678, "lng": 109.6798 }
+    },
+    "poster": "https://source.unsplash.com/800x1000/?indonesia,traditional",
+    "galeri": [
+      "https://source.unsplash.com/800x600/?indonesia,festival"
+    ],
+    "deskripsi_singkat": "Tradisi tahunan unik membelah lopis (kue ketan) raksasa setinggi 2 meter, simbol syukur pasca Idul Fitri.",
+    "deskripsi_singkat_en": "Unique annual tradition of slicing a 2-meter giant rice cake, symbolizing gratitude after Eid al-Fitr.",
+    "deskripsi_lengkap": "Syawalan adalah tradisi turun-temurun Pekalongan yang sudah berlangsung sejak abad ke-19. Puncaknya adalah pemotongan Lopis Raksasa setinggi 2 meter berat 1.700 kg yang dibagikan kepada masyarakat sebagai simbol berbagi rezeki dan persaudaraan. Tradisi ini diiringi dengan pawai gunungan, pertunjukan rebana, dan pasar rakyat. Setiap tahun, ribuan wisatawan datang khusus untuk menyaksikan momen ikonik ini.",
+    "deskripsi_lengkap_en": "Syawalan is a Pekalongan tradition dating back to the 19th century. Its highlight is the slicing of a 2-meter, 1,700-kg Giant Lopis distributed to the community as a symbol of shared blessings and brotherhood. The tradition is accompanied by gunungan parade, rebana performances, and folk markets. Thousands of tourists come specifically to witness this iconic moment annually.",
+    "jadwal": [
+      {
+        "hari": 1,
+        "tanggal": "2026-04-17",
+        "acara": [
+          { "waktu": "07:00", "kegiatan": "Pasar rakyat & kuliner buka" },
+          { "waktu": "09:00", "kegiatan": "Pawai Gunungan dari Kampung Krapyak" },
+          { "waktu": "10:30", "kegiatan": "Pertunjukan Rebana & Sintren" },
+          { "waktu": "11:00", "kegiatan": "PUNCAK: Pemotongan Lopis Raksasa & Pembagian" },
+          { "waktu": "13:00", "kegiatan": "Shalat Dzuhur berjamaah" },
+          { "waktu": "14:00", "kegiatan": "Halal bi halal akbar" }
+        ]
+      }
+    ],
+    "tiket": [
+      { "kategori": "Gratis", "harga": 0, "fasilitas": ["Akses seluruh acara"], "tersedia": true }
+    ],
+    "penyelenggara": {
+      "nama": "Pemkot Pekalongan & Masyarakat Krapyak",
+      "instagram": "@ticpekalongan"
+    },
+    "tips": [
+      "Datang sebelum jam 09:00 untuk dapat tempat strategis melihat pemotongan lopis",
+      "Pakai pakaian sederhana — acara akan sangat ramai dan padat",
+      "Kalau dapat potongan lopis, itu dianggap berkah!",
+      "Bawa kamera/HP untuk foto momen ikonik",
+      "Bawa air minum — cuaca April biasanya panas"
+    ],
+    "tips_en": [
+      "Arrive before 9 AM for strategic spot to see lopis slicing",
+      "Wear simple clothes — very crowded event",
+      "Getting a piece of lopis is considered a blessing!",
+      "Bring camera for iconic moment",
+      "Bring water — April weather is usually hot"
+    ],
+    "youtube_live_url": "https://youtube.com/watch?v=example",
+    "youtube_live_active": false,
+    "tags": ["syawalan", "lopis", "tradisi", "keagamaan", "krapyak"],
+    "related_events": ["nyadran-sedekah-laut-2026"]
+  },
+  {
+    "id": "festival-sintren-2026",
+    "slug": "festival-sintren-pekalongan-2026",
+    "judul": "Festival Sintren Pekalongan",
+    "judul_en": "Pekalongan Sintren Festival",
+    "kategori": "seni",
+    "status": "upcoming",
+    "tanggal_mulai": "2026-05-15",
+    "tanggal_selesai": "2026-05-17",
+    "lokasi": {
+      "nama": "Alun-alun Pekalongan",
+      "alamat": "Jl. Diponegoro, Pekalongan",
+      "koordinat": { "lat": -6.8898, "lng": 109.6750 }
+    },
+    "poster": "https://source.unsplash.com/800x1000/?indonesia,dance",
+    "galeri": [],
+    "deskripsi_singkat": "Festival kesenian mistis pesisir Pekalongan, menampilkan ratusan penari Sintren dari berbagai daerah.",
+    "deskripsi_singkat_en": "Mystical coastal arts festival featuring hundreds of Sintren dancers from various regions.",
+    "deskripsi_lengkap": "Sintren adalah tarian mistis khas pesisir utara Jawa, di mana penari muda mengalami trance dan menari di dalam kurungan. Festival ini menampilkan sanggar-sanggar Sintren dari Pekalongan, Pemalang, Tegal, dan Cirebon. Selain pertunjukan, ada workshop pengenalan Sintren untuk wisatawan dan diskusi budaya dengan akademisi.",
+    "deskripsi_lengkap_en": "Sintren is a mystical dance from Java's north coast, where young dancers enter trance and dance inside a cage. The festival showcases Sintren troupes from Pekalongan, Pemalang, Tegal, and Cirebon. Beyond performances, there are introductory Sintren workshops for tourists and cultural discussions with academics.",
+    "jadwal": [
+      { "hari": 1, "tanggal": "2026-05-15", "acara": [{ "waktu": "19:00", "kegiatan": "Pembukaan & Pertunjukan Sintren Kolosal" }] },
+      { "hari": 2, "tanggal": "2026-05-16", "acara": [{ "waktu": "14:00", "kegiatan": "Workshop Sintren untuk Wisatawan" }, { "waktu": "19:00", "kegiatan": "Festival Sintren Antar Daerah" }] },
+      { "hari": 3, "tanggal": "2026-05-17", "acara": [{ "waktu": "10:00", "kegiatan": "Diskusi Budaya 'Masa Depan Sintren'" }, { "waktu": "19:00", "kegiatan": "Penutupan & Penghargaan" }] }
+    ],
+    "tiket": [{ "kategori": "Gratis", "harga": 0, "fasilitas": ["Semua pertunjukan"], "tersedia": true }],
+    "penyelenggara": { "nama": "Dewan Kesenian Kota Pekalongan", "instagram": "@ticpekalongan" },
+    "tips": [
+      "Bawa kursi lipat — duduk di rumput alun-alun",
+      "Datang sebelum maghrib untuk pilih posisi terbaik",
+      "Hormati ritual sebelum pertunjukan — bagian dari tradisi",
+      "Dokumentasi diperbolehkan tanpa flash"
+    ],
+    "tips_en": [
+      "Bring folding chairs — sit on the field grass",
+      "Arrive before sunset for the best spot",
+      "Respect pre-performance rituals — part of tradition",
+      "No-flash photography allowed"
+    ],
+    "tags": ["sintren", "tari", "tradisional", "pesisir", "seni"]
+  },
+  {
+    "id": "pekalongan-carnival-2025",
+    "slug": "pekalongan-carnival-2025",
+    "judul": "Pekalongan Carnival 2025",
+    "judul_en": "Pekalongan Carnival 2025",
+    "kategori": "festival",
+    "status": "past",
+    "tanggal_mulai": "2025-08-17",
+    "tanggal_selesai": "2025-08-17",
+    "lokasi": {
+      "nama": "Jl. Diponegoro - Lapangan Mataram",
+      "alamat": "Pekalongan",
+      "koordinat": { "lat": -6.8898, "lng": 109.6750 }
+    },
+    "poster": "https://source.unsplash.com/800x1000/?carnival,parade",
+    "galeri": [
+      "https://source.unsplash.com/800x600/?carnival,colorful",
+      "https://source.unsplash.com/800x600/?parade,asia",
+      "https://source.unsplash.com/800x600/?costume,festival"
+    ],
+    "deskripsi_singkat": "Karnaval kostum batik kreatif untuk merayakan HUT RI dengan tema 'Batik Sang Saka Merah Putih'.",
+    "deskripsi_singkat_en": "Creative batik costume carnival celebrating Indonesian Independence Day with the theme 'Batik of the Red and White'.",
+    "deskripsi_lengkap": "Pekalongan Carnival 2025 sukses menampilkan 1.500 peserta dengan kostum batik kreatif inspirasi pahlawan nasional. Acara ini dihadiri Menteri Pariwisata dan ribuan wisatawan dari seluruh Indonesia, menjadi salah satu festival kostum batik terbesar di Asia Tenggara.",
+    "deskripsi_lengkap_en": "Pekalongan Carnival 2025 successfully showcased 1,500 participants in creative batik costumes inspired by national heroes. The event was attended by the Minister of Tourism and thousands of visitors from across Indonesia, becoming one of Southeast Asia's largest batik costume festivals.",
+    "jadwal": [
+      { "hari": 1, "tanggal": "2025-08-17", "acara": [
+        { "waktu": "07:00", "kegiatan": "Upacara Bendera HUT RI" },
+        { "waktu": "10:00", "kegiatan": "Karnaval Kostum Batik" },
+        { "waktu": "14:00", "kegiatan": "Pengumuman Pemenang Kostum Terbaik" },
+        { "waktu": "19:00", "kegiatan": "Pesta Rakyat & Pertunjukan Musik" }
+      ]}
+    ],
+    "tiket": [{ "kategori": "Gratis", "harga": 0, "fasilitas": ["Menonton karnaval"], "tersedia": false }],
+    "penyelenggara": { "nama": "Pemkot Pekalongan", "instagram": "@ticpekalongan" },
+    "tips": [],
+    "tips_en": [],
+    "tags": ["karnaval", "batik", "kemerdekaan", "festival"]
+  },
+  {
+    "id": "pekalongan-culinary-2025",
+    "slug": "pekalongan-culinary-festival-2025",
+    "judul": "Pekalongan Culinary Festival 2025",
+    "judul_en": "Pekalongan Culinary Festival 2025",
+    "kategori": "kuliner",
+    "status": "past",
+    "tanggal_mulai": "2025-07-12",
+    "tanggal_selesai": "2025-07-14",
+    "lokasi": {
+      "nama": "Lapangan Mataram",
+      "alamat": "Jl. Mataram, Pekalongan",
+      "koordinat": { "lat": -6.8898, "lng": 109.6750 }
+    },
+    "poster": "https://source.unsplash.com/800x1000/?food,festival",
+    "galeri": [
+      "https://source.unsplash.com/800x600/?indonesian,food",
+      "https://source.unsplash.com/800x600/?street-food,asia"
+    ],
+    "deskripsi_singkat": "Festival kuliner 3 hari menampilkan 100+ booth makanan khas Pekalongan dan Nusantara.",
+    "deskripsi_singkat_en": "3-day culinary festival featuring 100+ Pekalongan and archipelago specialty food booths.",
+    "deskripsi_lengkap": "Festival kuliner tahunan yang menampilkan makanan khas Pekalongan seperti Tauto, Megono, Pindang Tetel, Garang Asem, hingga inovasi kuliner kontemporer dari chef lokal.",
+    "deskripsi_lengkap_en": "Annual culinary festival featuring Pekalongan specialties like Tauto, Megono, Pindang Tetel, Garang Asem, and contemporary culinary innovations from local chefs.",
+    "jadwal": [],
+    "tiket": [{ "kategori": "Gratis", "harga": 0, "fasilitas": ["Akses booth"], "tersedia": false }],
+    "penyelenggara": { "nama": "Komunitas Kuliner Pekalongan", "instagram": "@ticpekalongan" },
+    "tips": [],
+    "tips_en": [],
+    "tags": ["kuliner", "festival", "khas-pekalongan"]
+  }
+]

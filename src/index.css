@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS Variables — Design Tokens (dipertahankan dari prototype untuk kompatibilitas) */
+:root {
+  --primary: #0A4D68;     /* Laut Dalam */
+  --secondary: #088395;   /* Laut Dangkal */
+  --accent: #F5E8C7;      /* Pasir Pantai */
+  --sun: #F2A93B;         /* Matahari */
+  --batik-red: #C73E3A;   /* Batik Pesisir */
+  --light: #FAFAFA;
+  --dark: #1A1A1A;
+  --text: #1A1A1A;
+  --text-muted: #5C6B73;
+  --line: #E5E7EB;
+  --shell-w: 1280px;
+}
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    color: var(--text);
+    background: var(--light);
+  }
+
+  body {
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  h1, h2, h3, h4 {
+    font-family: "Playfair Display", "Cormorant Garamond", Georgia, serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  button { font-family: inherit; cursor: pointer; }
+  img { display: block; max-width: 100%; }
+}
+
+@layer components {
+  /* Container shell */
+  .shell {
+    @apply max-w-shell mx-auto px-6;
+  }
+
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center gap-2 px-[22px] py-3 rounded-full font-semibold text-sm border border-transparent transition-all duration-200 whitespace-nowrap;
+  }
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-[#073a52] hover:-translate-y-px;
+  }
+  .btn-ghost {
+    @apply bg-transparent text-primary border-primary hover:bg-primary hover:text-white;
+  }
+  .btn-sun {
+    @apply bg-sun text-dark hover:bg-[#e09a2c];
+  }
+  .btn-light {
+    @apply bg-white text-primary;
+  }
+
+  /* Serif text */
+  .serif {
+    font-family: "Playfair Display", "Cormorant Garamond", Georgia, serif;
+  }
+}
+
+@layer utilities {
+  /* Scrollbar hide */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ============ Home Page Animations ============ */
+@keyframes cineKenBurns {
+  from { transform: scale(1.05) translate(0, 0); }
+  to   { transform: scale(1.15) translate(-2%, -1%); }
+}
+
+@keyframes cineFadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes cineMarquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100%); }
+}
+
+@keyframes cinePulse {
+  0%   { box-shadow: 0 0 0 0 rgba(242,169,59,.7); }
+  70%  { box-shadow: 0 0 0 8px rgba(242,169,59,0); }
+  100% { box-shadow: 0 0 0 0 rgba(242,169,59,0); }
+}
+
+@keyframes atlasGlow {
+  0%, 100% { opacity: .4; transform: scale(1); }
+  50%       { opacity: .8; transform: scale(1.15); }
+}
+
+/* Section header eyebrow decoration */
+.sec-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  margin-bottom: 16px;
+}
+.sec-eyebrow::before {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: currentColor;
+}
+
+/* ============ Kontak Form Input — Original: .form-group input/textarea/select ============ */
+.kontak-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: inherit;
+  background: #fff;
+  outline: none;
+  transition: border-color .15s;
+  color: var(--text);
+}
+.kontak-input:focus {
+  border-color: var(--secondary);
+}
+
+/* ============ Wizard Budget Slider ============ */
+.budget-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  background: rgba(255,255,255,.2);
+  border-radius: 3px;
+  outline: none;
+}
+.budget-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--sun);
+  cursor: pointer;
+  border: 3px solid #fff;
+}
+.budget-slider::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--sun);
+  cursor: pointer;
+  border: 3px solid #fff;
+  border: none;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Berita Detail — Original: .bd-article p:first-child::first-letter drop cap */
+.first-letter-dropcap::first-letter {
+  font-family: "Playfair Display", serif;
+  float: left;
+  font-size: 64px;
+  line-height: 1;
+  padding: 4px 12px 0 0;
+  color: var(--batik-red);
+  font-weight: 700;
+}

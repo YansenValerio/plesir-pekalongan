@@ -1,0 +1,81 @@
+{
+  "nama": "TIC Pekalongan",
+  "parent_dinas": "Dinas Kebudayaan, Pariwisata, Pemuda dan Olahraga Kota Pekalongan",
+  "alamat": {
+    "jalan": "Jl. Wr. Supratman",
+    "kelurahan": "Panjang Wetan",
+    "kecamatan": "Pekalongan Utara",
+    "kota": "Kota Pekalongan",
+    "provinsi": "Jawa Tengah",
+    "kode_pos": "51141",
+    "koordinat": { "lat": -6.8689, "lng": 109.6783 }
+  },
+  "kontak": {
+    "telepon": "(0285) 421-XXXX",
+    "whatsapp": "+62 812-XXXX-XXXX",
+    "email": "info@plesirpekalongan.id",
+    "website": "https://plesirpekalongan.id"
+  },
+  "jam_operasional": {
+    "senin_jumat": "08:00-17:00 WIB",
+    "sabtu": "Tutup",
+    "minggu": "Tutup",
+    "libur_nasional": "Tutup"
+  },
+  "sosial_media": {
+    "instagram": "@ticpekalongan",
+    "facebook": "TIC Pekalongan",
+    "tiktok": "@ticpekalongan",
+    "youtube": "TIC Pekalongan",
+    "x_twitter": "@ticpekalongan"
+  },
+  "layanan": [
+    "Informasi wisata gratis & brosur destinasi",
+    "Rekomendasi itinerary personal untuk wisatawan",
+    "Booking tour guide bersertifikat (termasuk bahasa Inggris)",
+    "Informasi event & festival terkini",
+    "Konsultasi UMKM batik & oleh-oleh khas Pekalongan",
+    "Penanganan keluhan & saran wisatawan",
+    "Penghubung dengan layanan darurat 24 jam",
+    "Workshop pengenalan budaya Pekalongan",
+    "Peta wisata & transportasi lokal",
+    "Bantuan penerjemahan untuk wisatawan asing"
+  ],
+  "emergency_contacts": [
+    {
+      "nama": "Polisi Pariwisata Pekalongan",
+      "nomor": "(0285) 421-110",
+      "deskripsi": "Khusus untuk keluhan & bantuan wisatawan"
+    },
+    {
+      "nama": "Polisi (Darurat)",
+      "nomor": "110",
+      "deskripsi": "Darurat kepolisian 24 jam"
+    },
+    {
+      "nama": "RSUD Bendan Pekalongan",
+      "nomor": "(0285) 432-XXXX",
+      "deskripsi": "Rumah sakit umum daerah, IGD 24 jam"
+    },
+    {
+      "nama": "Ambulans",
+      "nomor": "118",
+      "deskripsi": "Layanan ambulans gratis"
+    },
+    {
+      "nama": "Damkar Pekalongan",
+      "nomor": "113",
+      "deskripsi": "Pemadam kebakaran"
+    },
+    {
+      "nama": "BPBD Kota Pekalongan",
+      "nomor": "112",
+      "deskripsi": "Badan Penanggulangan Bencana Daerah"
+    },
+    {
+      "nama": "Tourist Hotline 24 Jam",
+      "nomor": "+62 812-XXXX-XXXX",
+      "deskripsi": "WhatsApp hotline untuk wisatawan asing & domestik"
+    }
+  ]
+}

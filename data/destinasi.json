@@ -1,0 +1,308 @@
+[
+  {
+    "id": "pantai-pasir-kencana",
+    "nama": "Pantai Pasir Kencana",
+    "nama_en": "Pasir Kencana Beach",
+    "kategori": "alam",
+    "sub_kategori": "pantai",
+    "wilayah": "utara",
+    "deskripsi": "Pantai Pasir Kencana adalah salah satu ikon wisata pesisir Pekalongan dengan hamparan pasir hitam yang dipercaya mengandung mineral kencana. Pengunjung dapat menikmati matahari terbenam, berkuda di tepi pantai, atau mencicipi seafood segar dari nelayan lokal. Pantai ini juga menjadi titik temu komunitas pesisir setiap akhir pekan dengan berbagai aktivitas budaya.",
+    "deskripsi_en": "Pasir Kencana Beach is one of Pekalongan's iconic coastal attractions, featuring black sand believed to contain golden minerals. Visitors can enjoy sunsets, horseback riding along the shore, or fresh seafood from local fishermen. The beach also hosts weekend coastal community gatherings with various cultural activities.",
+    "deskripsi_singkat": "Pantai pasir hitam ikonik Pekalongan dengan matahari terbenam memukau dan kuliner seafood segar.",
+    "foto_cover": "https://source.unsplash.com/1200x800/?beach,indonesia",
+    "galeri": [
+      "https://source.unsplash.com/800x600/?beach,sunset",
+      "https://source.unsplash.com/800x600/?beach,fishing",
+      "https://source.unsplash.com/800x600/?seafood,indonesia"
+    ],
+    "lokasi": {
+      "alamat": "Jl. Pantai Sari, Panjang Wetan, Pekalongan Utara",
+      "koordinat": { "lat": -6.8689, "lng": 109.6783 }
+    },
+    "jam_operasional": {
+      "senin": "06:00-18:00",
+      "selasa": "06:00-18:00",
+      "rabu": "06:00-18:00",
+      "kamis": "06:00-18:00",
+      "jumat": "06:00-18:00",
+      "sabtu": "06:00-20:00",
+      "minggu": "06:00-20:00"
+    },
+    "tiket": { "dewasa": 10000, "anak": 5000, "parkir_motor": 3000, "parkir_mobil": 5000 },
+    "fasilitas": ["parkir", "mushola", "toilet", "warung", "gazebo"],
+    "tips": [
+      "Datang sore hari untuk menikmati matahari terbenam terbaik",
+      "Coba seafood bakar di warung pantai dengan harga terjangkau",
+      "Hindari berenang saat ombak besar, terutama musim Desember-Februari",
+      "Bawa kamera untuk foto sunset Instagramable"
+    ],
+    "tips_en": [
+      "Visit in the afternoon for the best sunset view",
+      "Try grilled seafood at beachfront stalls at affordable prices",
+      "Avoid swimming during big waves, especially December-February",
+      "Bring a camera for Instagram-worthy sunset photos"
+    ],
+    "rating": 4.3,
+    "reviews_count": 1247,
+    "tags": ["pantai", "sunset", "seafood", "keluarga", "fotografi"],
+    "ramah_muslim": true,
+    "ramah_anak": true,
+    "ramah_difabel": false,
+    "best_time_to_visit": ["sore", "Mei", "Juni", "Juli", "Agustus", "September"],
+    "created_at": "2026-01-01T00:00:00Z",
+    "updated_at": "2026-04-01T00:00:00Z"
+  },
+  {
+    "id": "museum-batik-pekalongan",
+    "nama": "Museum Batik Pekalongan",
+    "nama_en": "Pekalongan Batik Museum",
+    "kategori": "budaya",
+    "sub_kategori": "museum",
+    "wilayah": "timur",
+    "deskripsi": "Museum Batik Pekalongan adalah pusat dokumentasi dan edukasi batik terbesar di Indonesia, menampilkan ribuan koleksi batik dari seluruh Nusantara dan mancanegara. Pengunjung dapat melihat proses pembuatan batik secara langsung, mengikuti workshop membatik, serta belajar tentang sejarah batik sebagai warisan budaya UNESCO. Pekalongan sendiri dikenal sebagai Kota Batik Dunia (UNESCO Creative City of Crafts and Folk Art) sejak 2014.",
+    "deskripsi_en": "Pekalongan Batik Museum is Indonesia's largest batik documentation and education center, showcasing thousands of batik collections from across the archipelago and abroad. Visitors can witness live batik-making, join hands-on workshops, and learn about batik's history as a UNESCO cultural heritage. Pekalongan itself has been recognized as a UNESCO Creative City of Crafts and Folk Art since 2014.",
+    "deskripsi_singkat": "Museum batik terbesar di Indonesia dengan workshop membatik langsung dan koleksi warisan UNESCO.",
+    "foto_cover": "https://source.unsplash.com/1200x800/?batik,indonesia",
+    "galeri": [
+      "https://source.unsplash.com/800x600/?batik,art",
+      "https://source.unsplash.com/800x600/?batik,workshop",
+      "https://source.unsplash.com/800x600/?museum,asia"
+    ],
+    "lokasi": {
+      "alamat": "Jl. Jetayu No. 1, Panjang Wetan, Pekalongan Utara",
+      "koordinat": { "lat": -6.8881, "lng": 109.6741 }
+    },
+    "jam_operasional": {
+      "senin": "Tutup",
+      "selasa": "08:00-15:00",
+      "rabu": "08:00-15:00",
+      "kamis": "08:00-15:00",
+      "jumat": "08:00-15:00",
+      "sabtu": "08:00-15:00",
+      "minggu": "08:00-15:00"
+    },
+    "tiket": { "dewasa": 15000, "anak": 8000, "parkir_motor": 2000, "parkir_mobil": 5000 },
+    "fasilitas": ["parkir", "mushola", "toilet", "wifi", "ramah-difabel", "tour-guide", "workshop"],
+    "tips": [
+      "Booking workshop membatik sehari sebelum kunjungan via WhatsApp museum",
+      "Tour guide tersedia gratis dengan pemberitahuan 30 menit sebelumnya",
+      "Senin tutup — pilih hari lain",
+      "Dilarang menyentuh koleksi batik kuno",
+      "Beli kain batik original di toko souvenir museum"
+    ],
+    "tips_en": [
+      "Book batik workshop one day in advance via museum WhatsApp",
+      "Free tour guide available with 30 minutes prior notice",
+      "Closed on Mondays — choose another day",
+      "Do not touch ancient batik collections",
+      "Buy original batik at the museum souvenir shop"
+    ],
+    "rating": 4.7,
+    "reviews_count": 2103,
+    "tags": ["batik", "museum", "edukasi", "workshop", "unesco", "budaya"],
+    "ramah_muslim": true,
+    "ramah_anak": true,
+    "ramah_difabel": true,
+    "best_time_to_visit": ["pagi"],
+    "created_at": "2026-01-01T00:00:00Z",
+    "updated_at": "2026-04-01T00:00:00Z"
+  },
+  {
+    "id": "kampung-batik-kauman",
+    "nama": "Kampung Batik Kauman",
+    "nama_en": "Kauman Batik Village",
+    "kategori": "budaya",
+    "sub_kategori": "kampung-tematik",
+    "wilayah": "timur",
+    "deskripsi": "Kampung Batik Kauman adalah kawasan heritage di pusat Kota Pekalongan yang menjadi cikal bakal industri batik tulis. Berjalan menyusuri gang-gang kampung ini, pengunjung dapat menyaksikan langsung proses pembuatan batik di rumah-rumah pengrajin yang masih mempertahankan teknik tradisional turun-temurun. Selain berbelanja batik berkualitas, wisatawan juga bisa belajar membatik bersama para maestro lokal.",
+    "deskripsi_en": "Kauman Batik Village is a heritage area in the heart of Pekalongan and the cradle of hand-drawn batik industry. Walking through its alleys, visitors witness live batik-making at artisan homes that preserve traditional techniques passed down through generations. Beyond shopping for quality batik, tourists can learn batik-making alongside local maestros.",
+    "deskripsi_singkat": "Kampung heritage tempat lahirnya batik tulis dengan workshop interaktif bersama maestro lokal.",
+    "foto_cover": "https://source.unsplash.com/1200x800/?batik,artisan",
+    "galeri": [
+      "https://source.unsplash.com/800x600/?indonesia,village",
+      "https://source.unsplash.com/800x600/?batik,maker",
+      "https://source.unsplash.com/800x600/?heritage,asia"
+    ],
+    "lokasi": {
+      "alamat": "Kelurahan Kauman, Pekalongan Timur",
+      "koordinat": { "lat": -6.8895, "lng": 109.6789 }
+    },
+    "tiket": { "dewasa": 0, "anak": 0 },
+    "fasilitas": ["parkir", "mushola", "toilet", "warung", "workshop", "guide"],
+    "tips": [
+      "Datang pagi (08:00-11:00) untuk melihat pengrajin paling aktif membatik",
+      "Tawar-menawar wajar saat membeli, tapi hargai kerja keras pengrajin",
+      "Workshop membatik 2 jam sekitar Rp 75.000-150.000",
+      "Pakai pakaian yang bisa kotor — proses membatik melibatkan lilin panas"
+    ],
+    "tips_en": [
+      "Visit in the morning (8-11 AM) to see most active batik-making",
+      "Bargaining is acceptable, but respect artisans' hard work",
+      "2-hour batik workshop costs around Rp 75,000-150,000",
+      "Wear clothes that can get dirty — wax is involved"
+    ],
+    "rating": 4.6,
+    "reviews_count": 892,
+    "tags": ["batik", "heritage", "workshop", "kampung", "budaya"],
+    "ramah_muslim": true,
+    "ramah_anak": true,
+    "ramah_difabel": false,
+    "created_at": "2026-01-01T00:00:00Z",
+    "updated_at": "2026-04-01T00:00:00Z"
+  },
+  {
+    "id": "masjid-agung-al-jami",
+    "nama": "Masjid Agung Al-Jami' Pekalongan",
+    "nama_en": "Al-Jami' Grand Mosque",
+    "kategori": "religi",
+    "sub_kategori": "masjid",
+    "wilayah": "selatan",
+    "deskripsi": "Masjid Agung Al-Jami' adalah masjid bersejarah Kota Pekalongan yang berdiri sejak abad ke-19 dengan arsitektur perpaduan Jawa, Arab, dan Tionghoa. Masjid ini menjadi pusat kegiatan keagamaan dan budaya Islam, dikelilingi oleh kawasan pondok pesantren tradisional. Wisatawan muslim sering mampir untuk shalat sambil menikmati keindahan arsitekturnya yang unik.",
+    "deskripsi_en": "Al-Jami' Grand Mosque is a historic mosque in Pekalongan, standing since the 19th century with a unique blend of Javanese, Arabic, and Chinese architecture. Surrounded by traditional Islamic boarding schools, it serves as the center of religious and Islamic cultural activities. Muslim travelers often stop here for prayers while admiring the distinctive architecture.",
+    "deskripsi_singkat": "Masjid bersejarah dengan arsitektur perpaduan Jawa, Arab, dan Tionghoa di pusat kota santri.",
+    "foto_cover": "https://source.unsplash.com/1200x800/?mosque,indonesia",
+    "galeri": [
+      "https://source.unsplash.com/800x600/?mosque,architecture",
+      "https://source.unsplash.com/800x600/?islamic,art"
+    ],
+    "lokasi": {
+      "alamat": "Jl. Diponegoro, Kauman, Pekalongan Selatan",
+      "koordinat": { "lat": -6.8902, "lng": 109.6731 }
+    },
+    "jam_operasional": {
+      "senin": "04:00-22:00",
+      "selasa": "04:00-22:00",
+      "rabu": "04:00-22:00",
+      "kamis": "04:00-22:00",
+      "jumat": "04:00-22:00",
+      "sabtu": "04:00-22:00",
+      "minggu": "04:00-22:00"
+    },
+    "tiket": { "dewasa": 0, "anak": 0 },
+    "fasilitas": ["parkir", "wudhu", "toilet", "ramah-difabel"],
+    "tips": [
+      "Berpakaian sopan dan menutup aurat",
+      "Jumat siang sangat ramai — datang lebih awal",
+      "Foto interior diperbolehkan di luar waktu shalat",
+      "Hormati jamaah yang sedang beribadah"
+    ],
+    "tips_en": [
+      "Dress modestly and cover properly",
+      "Friday noon is very crowded — come early",
+      "Interior photos allowed outside prayer time",
+      "Respect worshippers"
+    ],
+    "rating": 4.8,
+    "reviews_count": 567,
+    "tags": ["masjid", "religi", "heritage", "halal", "arsitektur"],
+    "ramah_muslim": true,
+    "ramah_anak": true,
+    "ramah_difabel": true,
+    "created_at": "2026-01-01T00:00:00Z",
+    "updated_at": "2026-04-01T00:00:00Z"
+  },
+  {
+    "id": "tauto-pekalongan-bahari",
+    "nama": "Tauto Pekalongan Bahari",
+    "nama_en": "Tauto Pekalongan Bahari",
+    "kategori": "kuliner",
+    "sub_kategori": "soto-khas",
+    "wilayah": "utara",
+    "deskripsi": "Tauto adalah soto khas Pekalongan yang memiliki kuah berwarna merah kecoklatan khas, hasil dari bumbu tauco fermentasi. Disajikan dengan daging sapi atau kerbau yang empuk, ditemani lontong atau nasi, serta kerupuk usek khas Pekalongan. Warung Tauto Bahari sudah berdiri sejak 1965 dan menjadi rujukan kuliner para wisatawan yang ingin merasakan cita rasa otentik Pekalongan.",
+    "deskripsi_en": "Tauto is Pekalongan's signature soup with a distinctive reddish-brown broth from fermented tauco. Served with tender beef or buffalo meat, rice cake or rice, and traditional usek crackers. Warung Tauto Bahari has been operating since 1965, becoming a culinary landmark for tourists seeking authentic Pekalongan flavors.",
+    "deskripsi_singkat": "Soto khas Pekalongan dengan kuah tauco fermentasi, warung legendaris sejak 1965.",
+    "foto_cover": "https://source.unsplash.com/1200x800/?indonesian,food",
+    "galeri": [
+      "https://source.unsplash.com/800x600/?soto,indonesia",
+      "https://source.unsplash.com/800x600/?street-food,asia"
+    ],
+    "lokasi": {
+      "alamat": "Jl. Dr. Wahidin No. 11, Pekalongan Utara",
+      "koordinat": { "lat": -6.8845, "lng": 109.6712 }
+    },
+    "jam_operasional": {
+      "senin": "07:00-21:00",
+      "selasa": "07:00-21:00",
+      "rabu": "07:00-21:00",
+      "kamis": "07:00-21:00",
+      "jumat": "07:00-21:00",
+      "sabtu": "07:00-22:00",
+      "minggu": "07:00-22:00"
+    },
+    "tiket": { "dewasa": 0, "anak": 0 },
+    "fasilitas": ["parkir", "mushola", "toilet", "ac", "halal"],
+    "tips": [
+      "Harga porsi standar Rp 25.000 - Rp 35.000",
+      "Pesan dengan lontong untuk pengalaman tradisional",
+      "Hari Minggu sangat ramai, datang sebelum jam 11.00",
+      "Coba kerupuk usek dan emping khas Pekalongan sebagai pelengkap"
+    ],
+    "tips_en": [
+      "Standard portion costs Rp 25,000 - Rp 35,000",
+      "Order with lontong for traditional experience",
+      "Sundays are very busy, come before 11 AM",
+      "Try usek crackers and emping for authentic Pekalongan side"
+    ],
+    "rating": 4.5,
+    "reviews_count": 1456,
+    "tags": ["kuliner", "soto", "khas-pekalongan", "halal", "legendaris"],
+    "ramah_muslim": true,
+    "ramah_anak": true,
+    "ramah_difabel": false,
+    "created_at": "2026-01-01T00:00:00Z",
+    "updated_at": "2026-04-01T00:00:00Z"
+  },
+  {
+    "id": "international-batik-center",
+    "nama": "International Batik Center (IBC)",
+    "nama_en": "International Batik Center",
+    "kategori": "belanja",
+    "sub_kategori": "pusat-belanja",
+    "wilayah": "selatan",
+    "deskripsi": "International Batik Center adalah destinasi belanja batik terlengkap di Pekalongan, menampung lebih dari 200 pengrajin batik dari seluruh kota. Pengunjung dapat berburu batik tulis premium, batik cap, hingga batik printing dengan harga grosir. Selain belanja, IBC juga menyelenggarakan fashion show batik, workshop, dan event seasonal yang menampilkan koleksi batik kontemporer.",
+    "deskripsi_en": "International Batik Center is Pekalongan's most comprehensive batik shopping destination, housing over 200 batik artisans from across the city. Visitors can hunt premium hand-drawn batik, stamped batik, to printed batik at wholesale prices. Beyond shopping, IBC hosts batik fashion shows, workshops, and seasonal events featuring contemporary batik collections.",
+    "deskripsi_singkat": "Pusat belanja batik terlengkap dengan 200+ pengrajin, harga grosir, dan fashion event.",
+    "foto_cover": "https://source.unsplash.com/1200x800/?batik,market",
+    "galeri": [
+      "https://source.unsplash.com/800x600/?fabric,market",
+      "https://source.unsplash.com/800x600/?textile,asia"
+    ],
+    "lokasi": {
+      "alamat": "Jl. Raya Wiradesa, Pekalongan Selatan",
+      "koordinat": { "lat": -6.8945, "lng": 109.6512 }
+    },
+    "jam_operasional": {
+      "senin": "08:00-20:00",
+      "selasa": "08:00-20:00",
+      "rabu": "08:00-20:00",
+      "kamis": "08:00-20:00",
+      "jumat": "08:00-20:00",
+      "sabtu": "08:00-21:00",
+      "minggu": "08:00-21:00"
+    },
+    "tiket": { "dewasa": 0, "anak": 0 },
+    "fasilitas": ["parkir", "mushola", "toilet", "ac", "wifi", "ramah-difabel", "food-court"],
+    "tips": [
+      "Bawa dompet cukup — godaan batik cantik luar biasa banyak",
+      "Tawar-menawar diperbolehkan, terutama untuk pembelian banyak",
+      "Cari label 'Batik Tulis' untuk batik asli buatan tangan (lebih mahal tapi otentik)",
+      "Food court di lantai 2 menyediakan kuliner khas Pekalongan",
+      "Datang weekend untuk fashion show dadakan"
+    ],
+    "tips_en": [
+      "Bring enough cash — temptation of beautiful batik is endless",
+      "Bargaining accepted, especially for bulk purchases",
+      "Look for 'Batik Tulis' labels for authentic handmade batik (pricier but original)",
+      "Second floor food court offers Pekalongan specialties",
+      "Visit weekends for impromptu fashion shows"
+    ],
+    "rating": 4.4,
+    "reviews_count": 1823,
+    "tags": ["belanja", "batik", "oleh-oleh", "fashion", "pusat-belanja"],
+    "ramah_muslim": true,
+    "ramah_anak": true,
+    "ramah_difabel": true,
+    "created_at": "2026-01-01T00:00:00Z",
+    "updated_at": "2026-04-01T00:00:00Z"
+  }
+]

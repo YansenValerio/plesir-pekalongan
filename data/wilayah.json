@@ -1,0 +1,78 @@
+[
+  {
+    "id": "utara",
+    "svg_id": "Pekalongan_Utara",
+    "nama": "Pekalongan Utara",
+    "nama_en": "North Pekalongan",
+    "tagline": "Kawasan pesisir dengan pantai eksotis dan kuliner laut khas",
+    "tagline_en": "Coastal area with exotic beaches and signature seafood",
+    "deskripsi": "Pekalongan Utara adalah pintu gerbang kota dari laut Jawa, dengan garis pantai panjang yang menjadi rumah bagi pantai-pantai ikonik seperti Pantai Pasir Kencana dan Pantai Slamaran. Wilayah ini juga merupakan pusat industri perikanan dengan TPI Pelabuhan Pekalongan yang menjadi salah satu yang terbesar di Pantura. Wisatawan dapat menikmati seafood segar, naik perahu nelayan, atau menyaksikan momen lopis raksasa Syawalan di Kampung Krapyak.",
+    "deskripsi_en": "North Pekalongan is the city's gateway from the Java Sea, with a long coastline housing iconic beaches like Pasir Kencana and Slamaran. This region is also a fisheries hub with one of Pantura's largest fish auction markets. Visitors can enjoy fresh seafood, ride fishermen's boats, or witness the iconic Syawalan giant lopis moment in Krapyak Village.",
+    "thumbnail": "https://source.unsplash.com/600x400/?beach,fishing,village",
+    "destinasi_unggulan": ["pantai-pasir-kencana", "tauto-pekalongan-bahari", "museum-batik-pekalongan"],
+    "jumlah_destinasi": 12,
+    "ciri_khas": ["Pantai Pasir Kencana", "Pelabuhan Perikanan", "Tauto Bahari", "Kampung Krapyak", "Museum Batik"],
+    "warna": {
+      "fill": "#088395",
+      "fill_hover": "#F2A93B",
+      "fill_active": "#0A4D68"
+    }
+  },
+  {
+    "id": "selatan",
+    "svg_id": "Pekalongan_Selatan",
+    "nama": "Pekalongan Selatan",
+    "nama_en": "South Pekalongan",
+    "tagline": "Pusat heritage religi dan kawasan santri tradisional",
+    "tagline_en": "Religious heritage center and traditional santri area",
+    "deskripsi": "Pekalongan Selatan dikenal sebagai jantung spiritual kota, dengan Masjid Agung Al-Jami' bersejarah dan kawasan pondok pesantren tradisional yang sudah berdiri sejak abad ke-19. Wilayah ini juga menjadi rumah bagi International Batik Center, pusat belanja batik terlengkap. Suasana kota santri yang tenang dan damai membuat wisata religi di sini sangat menyenangkan, dengan banyak makam wali dan tokoh ulama yang menjadi destinasi ziarah.",
+    "deskripsi_en": "South Pekalongan is known as the city's spiritual heart, with the historic Al-Jami' Grand Mosque and traditional Islamic boarding schools dating back to the 19th century. This region is also home to the International Batik Center. The peaceful santri city atmosphere makes religious tourism here delightful, with many saint tombs and ulama figures serving as pilgrimage destinations.",
+    "thumbnail": "https://source.unsplash.com/600x400/?mosque,heritage,indonesia",
+    "destinasi_unggulan": ["masjid-agung-al-jami", "international-batik-center"],
+    "jumlah_destinasi": 8,
+    "ciri_khas": ["Masjid Agung Al-Jami'", "Pondok Pesantren", "International Batik Center", "Makam Habib", "Kota Santri"],
+    "warna": {
+      "fill": "#F5E8C7",
+      "fill_hover": "#F2A93B",
+      "fill_active": "#0A4D68"
+    }
+  },
+  {
+    "id": "timur",
+    "svg_id": "Pekalongan_Timur",
+    "nama": "Pekalongan Timur",
+    "nama_en": "East Pekalongan",
+    "tagline": "Pusat heritage batik tulis dan perdagangan tradisional",
+    "tagline_en": "Hub of handwritten batik heritage and traditional commerce",
+    "deskripsi": "Pekalongan Timur adalah cikal bakal industri batik tulis Pekalongan, dengan Kampung Batik Kauman sebagai ikonnya. Berjalan menyusuri gang-gang kampung ini akan membawa Anda merasakan langsung proses pembuatan batik turun-temurun. Wilayah ini juga menjadi pusat perdagangan kota dengan Pasar Banjarsari dan deretan toko batik legendaris yang sudah ada sejak puluhan tahun lalu. Kuliner khas seperti Pindang Tetel dan Garang Asem Masin juga banyak ditemukan di sini.",
+    "deskripsi_en": "East Pekalongan is the cradle of Pekalongan's handwritten batik industry, with Kampung Batik Kauman as its icon. Walking through this village's alleys lets you experience the generational batik-making process directly. This region is also the city's commerce hub with Pasar Banjarsari and rows of legendary batik shops dating back decades. Signature dishes like Pindang Tetel and Garang Asem Masin are easily found here.",
+    "thumbnail": "https://source.unsplash.com/600x400/?batik,market,traditional",
+    "destinasi_unggulan": ["kampung-batik-kauman"],
+    "jumlah_destinasi": 10,
+    "ciri_khas": ["Kampung Batik Kauman", "Pasar Banjarsari", "Pindang Tetel", "Toko Batik Heritage", "Kampung Pesindon"],
+    "warna": {
+      "fill": "#7FCBDB",
+      "fill_hover": "#F2A93B",
+      "fill_active": "#0A4D68"
+    }
+  },
+  {
+    "id": "barat",
+    "svg_id": "Pekalongan_Barat",
+    "nama": "Pekalongan Barat",
+    "nama_en": "West Pekalongan",
+    "tagline": "Destinasi ziarah dan kawasan religi bersejarah",
+    "tagline_en": "Pilgrimage destination and historic religious area",
+    "deskripsi": "Pekalongan Barat menjadi destinasi utama untuk wisata ziarah, dengan Makam Habib Ahmad Al-Attas Sapuro yang ramai dikunjungi peziarah dari seluruh Indonesia. Wilayah ini menyimpan banyak makam ulama dan tokoh penyebar Islam di Pantura. Selain wisata religi, Anda juga bisa menemukan kuliner khas seperti Apem Kesesi yang legendaris, serta sentra produksi kerupuk usek yang menjadi oleh-oleh wajib dari Pekalongan.",
+    "deskripsi_en": "West Pekalongan is the primary destination for pilgrimage tourism, with the tomb of Habib Ahmad Al-Attas Sapuro frequently visited by pilgrims from all over Indonesia. This region holds many tombs of ulamas and Islamic figures of the north coast. Beyond religious tourism, you can find signature dishes like the legendary Apem Kesesi, and centers producing usek crackers — Pekalongan's must-have souvenir.",
+    "thumbnail": "https://source.unsplash.com/600x400/?cemetery,heritage,asia",
+    "destinasi_unggulan": [],
+    "jumlah_destinasi": 7,
+    "ciri_khas": ["Makam Habib Sapuro", "Apem Kesesi", "Sentra Kerupuk Usek", "Wisata Ziarah", "Heritage Religi"],
+    "warna": {
+      "fill": "#B3E1EB",
+      "fill_hover": "#F2A93B",
+      "fill_active": "#0A4D68"
+    }
+  }
+]
