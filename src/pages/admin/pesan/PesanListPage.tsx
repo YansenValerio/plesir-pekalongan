@@ -7,6 +7,7 @@ interface Pesan {
   email: string
   subjek: string
   pesan: string
+  dibaca: boolean
   created_at: string
 }
 
@@ -28,6 +29,15 @@ export default function PesanListPage() {
 
   useEffect(() => { load() }, [])
 
+  async function handleExpand(p: Pesan) {
+    const isOpening = expandedId !== p.id
+    setExpandedId(isOpening ? p.id : null)
+    if (isOpening && !p.dibaca) {
+      await supabase.from('pesan_kontak').update({ dibaca: true }).eq('id', p.id)
+      setData(prev => prev.map(m => m.id === p.id ? { ...m, dibaca: true } : m))
+    }
+  }
+
   async function handleDelete(id: string) {
     if (!confirm('Hapus pesan ini?')) return
     setDeleting(id)
@@ -46,7 +56,14 @@ export default function PesanListPage() {
     <div className="p-8">
       <div className="flex items-center justify-between mb-6">
         <h1 className="serif text-white text-xl font-semibold">Pesan Masuk</h1>
-        <span className="text-white/40 text-sm">{data.length} pesan</span>
+        <span className="text-white/40 text-sm">
+          {data.length} pesan
+          {data.filter(p => !p.dibaca).length > 0 && (
+            <span className="ml-2 text-red-400 font-semibold">
+              · {data.filter(p => !p.dibaca).length} belum dibaca
+            </span>
+          )}
+        </span>
       </div>
 
       {loading ? (
@@ -77,13 +94,18 @@ export default function PesanListPage() {
               <div
                 className="grid grid-cols-[1fr_1fr_1.5fr_auto] gap-4 px-5 py-4 items-center cursor-pointer hover:bg-white/[.03] transition-colors"
                 style={rowStyle}
-                onClick={() => setExpandedId(expandedId === p.id ? null : p.id)}
+                onClick={() => handleExpand(p)}
               >
-                <div className="min-w-0">
-                  <div className="text-white text-sm font-semibold truncate">{p.nama}</div>
-                  <div className="text-white/40 text-xs truncate">{p.email}</div>
+                <div className="min-w-0 flex items-center gap-2">
+                  {!p.dibaca && (
+                    <span className="w-2 h-2 rounded-full bg-red-500 flex-shrink-0" />
+                  )}
+                  <div className="min-w-0">
+                    <div className={`text-sm truncate ${p.dibaca ? 'text-white/70' : 'text-white font-semibold'}`}>{p.nama}</div>
+                    <div className="text-white/40 text-xs truncate">{p.email}</div>
+                  </div>
                 </div>
-                <div className="text-white/70 text-sm truncate">{p.subjek}</div>
+                <div className={`text-sm truncate ${p.dibaca ? 'text-white/50' : 'text-white/80'}`}>{p.subjek}</div>
                 <div className="text-white/40 text-xs">{formatDate(p.created_at)}</div>
                 <div className="flex items-center gap-2">
                   <span className="text-white/40 text-xs transition-transform duration-150" style={{ display: 'inline-block', transform: expandedId === p.id ? 'rotate(180deg)' : 'none' }}>

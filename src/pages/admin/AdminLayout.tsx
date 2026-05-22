@@ -1,5 +1,7 @@
+import { useEffect, useState } from 'react'
 import { NavLink, Outlet, useNavigate } from 'react-router-dom'
 import { useAuth } from '@/contexts/AuthContext'
+import { supabase } from '@/lib/supabase'
 
 const NAV = [
   { to: '/admin', label: 'Dashboard', icon: '📊', end: true },
@@ -13,6 +15,30 @@ const NAV = [
 export default function AdminLayout() {
   const { user, signOut } = useAuth()
   const navigate = useNavigate()
+  const [unread, setUnread] = useState(0)
+
+  useEffect(() => {
+    async function fetchUnread() {
+      const { count } = await supabase
+        .from('pesan_kontak')
+        .select('*', { count: 'exact', head: true })
+        .eq('dibaca', false)
+      setUnread(count ?? 0)
+    }
+    fetchUnread()
+
+    const channel = supabase
+      .channel('pesan-unread')
+      .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'pesan_kontak' }, () => {
+        setUnread(n => n + 1)
+      })
+      .on('postgres_changes', { event: 'UPDATE', schema: 'public', table: 'pesan_kontak' }, () => {
+        fetchUnread()
+      })
+      .subscribe()
+
+    return () => { supabase.removeChannel(channel) }
+  }, [])
 
   async function handleSignOut() {
     await signOut()
@@ -52,6 +78,11 @@ export default function AdminLayout() {
             >
               <span>{item.icon}</span>
               {item.label}
+              {item.to === '/admin/pesan' && unread > 0 && (
+                <span className="ml-auto bg-red-500 text-white text-[10px] font-bold rounded-full min-w-[18px] h-[18px] flex items-center justify-center px-1 leading-none">
+                  {unread > 99 ? '99+' : unread}
+                </span>
+              )}
             </NavLink>
           ))}
         </nav>
