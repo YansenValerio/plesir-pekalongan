@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { getEventBySlug, eventData } from '@/data'
+import { useEventBySlug, useEventList } from '@/hooks/useSupabaseData'
 import { formatRupiah } from '@/utils/currency'
 import Icon from '@/components/common/Icon'
 import { formatTanggal, getStatusLabel, getStatusStyle, getCatColor, CAT_LABELS, EventCard } from './EventPage'
@@ -84,7 +84,14 @@ export default function EventDetailPage() {
 
   const sectionRefs = useRef<Record<string, HTMLDivElement | null>>({})
 
-  const event = slug ? getEventBySlug(slug) : undefined
+  const { data: event, loading } = useEventBySlug(slug)
+  const { data: allEvents } = useEventList()
+
+  if (loading) return (
+    <div className="min-h-screen flex items-center justify-center">
+      <div className="w-8 h-8 rounded-full border-2 border-primary border-t-transparent animate-spin" />
+    </div>
+  )
 
   if (!event) {
     return (
@@ -133,7 +140,7 @@ export default function EventDetailPage() {
     })
   }
 
-  const relatedEvents = eventData
+  const relatedEvents = allEvents
     .filter(e => e.id !== event.id && e.kategori === event.kategori)
     .slice(0, 3)
 

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { destinasiData } from '@/data'
+import { useDestinasiList } from '@/hooks/useSupabaseData'
 import { formatRupiah } from '@/utils/currency'
 import { CATEGORIES, WILAYAH_LABELS, type KategoriId } from '@/constants'
 import type { Destinasi } from '@/types'
@@ -29,6 +29,13 @@ export default function DestinasiListing({ initialKategori = 'all' }: Props) {
   const navigate = useNavigate()
   const { t, i18n } = useTranslation()
   const isEn = i18n.language === 'en'
+  const { data: destinasiData, loading } = useDestinasiList()
+
+  if (loading) return (
+    <div className="min-h-screen flex items-center justify-center">
+      <div className="w-8 h-8 rounded-full border-2 border-primary border-t-transparent animate-spin" />
+    </div>
+  )
 
   const filtered = destinasiData.filter(d =>
     (cat === 'all' || d.kategori === cat) &&

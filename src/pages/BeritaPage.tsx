@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { beritaData } from '@/data'
+import { useBeritaList } from '@/hooks/useSupabaseData'
 import Icon from '@/components/common/Icon'
 import PageMeta from '@/components/common/PageMeta'
 import type { Berita } from '@/types'
@@ -36,6 +36,7 @@ export default function BeritaPage() {
   const navigate = useNavigate()
   const { i18n } = useTranslation()
   const isEn = i18n.language === 'en'
+  const { data: beritaData, loading } = useBeritaList()
 
   const filtered = useMemo(() => {
     let list = beritaData.filter(b => {
@@ -51,7 +52,13 @@ export default function BeritaPage() {
     if (sort === 'terpopuler') list = [...list].sort((a, b) => b.views - a.views)
     if (sort === 'editor') list = list.filter(b => b.is_featured)
     return list
-  }, [cat, sort, q, isEn])
+  }, [beritaData, cat, sort, q, isEn])
+
+  if (loading) return (
+    <div className="min-h-screen flex items-center justify-center">
+      <div className="w-8 h-8 rounded-full border-2 border-primary border-t-transparent animate-spin" />
+    </div>
+  )
 
   return (
     <>

@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { eventData } from '@/data'
+import { useEventList } from '@/hooks/useSupabaseData'
 import Icon from '@/components/common/Icon'
 import PageMeta from '@/components/common/PageMeta'
 import type { Event } from '@/types'
@@ -74,11 +74,12 @@ export default function EventPage() {
   const navigate = useNavigate()
   const { i18n } = useTranslation()
   const isEn = i18n.language === 'en'
+  const { data: eventData, loading } = useEventList()
 
   const availableYears = useMemo(() => {
     const years = new Set(eventData.map(e => new Date(e.tanggal_mulai).getFullYear()))
     return [...years].sort()
-  }, [])
+  }, [eventData])
 
   const filtered = useMemo(() => eventData.filter(e => {
     const d = new Date(e.tanggal_mulai)
@@ -92,7 +93,13 @@ export default function EventPage() {
       if (!judul.toLowerCase().includes(qLow) && !e.lokasi.nama.toLowerCase().includes(qLow)) return false
     }
     return true
-  }), [statusFilter, yearFilter, monthFilter, cat, q, isEn])
+  }), [eventData, statusFilter, yearFilter, monthFilter, cat, q, isEn])
+
+  if (loading) return (
+    <div className="min-h-screen flex items-center justify-center">
+      <div className="w-8 h-8 rounded-full border-2 border-primary border-t-transparent animate-spin" />
+    </div>
+  )
 
   const hasFilter = statusFilter.length > 0 || yearFilter.length > 0 || monthFilter.length > 0 || cat !== 'all' || q !== ''
 

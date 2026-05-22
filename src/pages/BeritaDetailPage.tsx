@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { beritaData, getBeritaBySlug } from '@/data'
+import { useBeritaBySlug, useBeritaList } from '@/hooks/useSupabaseData'
 import Icon from '@/components/common/Icon'
 import { BeritaCard, formatBeritaDate } from './BeritaPage'
 import type { Berita } from '@/types'
@@ -52,7 +52,14 @@ export default function BeritaDetailPage() {
   const [shared, setShared] = useState(false)
   const [lightboxImg, setLightboxImg] = useState<string | null>(null)
 
-  const article = slug ? getBeritaBySlug(slug) : undefined
+  const { data: article, loading } = useBeritaBySlug(slug)
+  const { data: allBerita } = useBeritaList()
+
+  if (loading) return (
+    <div className="min-h-screen flex items-center justify-center">
+      <div className="w-8 h-8 rounded-full border-2 border-primary border-t-transparent animate-spin" />
+    </div>
+  )
 
   if (!article) {
     return (
@@ -71,8 +78,8 @@ export default function BeritaDetailPage() {
 
   const contentBlocks = parseContent(konten)
   const toc = extractTOC(konten)
-  const relatedArticles = getRelatedArticles(article, beritaData)
-  const moreArticles = beritaData.filter(b => b.id !== article.id).slice(0, 3)
+  const relatedArticles = getRelatedArticles(article, allBerita)
+  const moreArticles = allBerita.filter(b => b.id !== article.id).slice(0, 3)
 
   function handleShare(platform: 'wa' | 'fb' | 'tw' | 'copy') {
     if (platform === 'wa') window.open(`https://wa.me/?text=${encodeURIComponent(judul + ' — ' + shareUrl)}`)

@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { destinasiData } from '@/data'
+import { useDestinasiById, useDestinasiList } from '@/hooks/useSupabaseData'
 import { useFavoriteStore } from '@/stores/favoriteStore'
 import { formatRupiah } from '@/utils/currency'
 import { CATEGORIES, WILAYAH_LABELS } from '@/constants'
@@ -41,7 +41,14 @@ export default function DestinasiDetailPage() {
   const tabNavRef = useRef<HTMLDivElement>(null)
   const { isDestinasiSaved, toggleDestinasi } = useFavoriteStore()
 
-  const d = destinasiData.find(x => x.id === slug)
+  const { data: d, loading } = useDestinasiById(slug)
+  const { data: allDestinasi } = useDestinasiList()
+
+  if (loading) return (
+    <div className="min-h-screen flex items-center justify-center">
+      <div className="w-8 h-8 rounded-full border-2 border-primary border-t-transparent animate-spin" />
+    </div>
+  )
 
   if (!d) {
     return (
@@ -56,7 +63,7 @@ export default function DestinasiDetailPage() {
 
   const cat = CATEGORIES.find(c => c.id === d.kategori)
   const area = WILAYAH_LABELS[d.wilayah] ?? d.wilayah
-  const related = destinasiData.filter(x => x.kategori === d.kategori && x.id !== d.id).slice(0, 3)
+  const related = allDestinasi.filter(x => x.kategori === d.kategori && x.id !== d.id).slice(0, 3)
   const isSaved = isDestinasiSaved(d.id)
   const shareUrl = `https://plesirpekalongan.id/destinasi/${d.kategori}/${d.id}`
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(d.nama + ' Pekalongan')}`
