@@ -3,6 +3,7 @@ import { useNavigate, Navigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useTripStore } from '@/stores/tripStore'
 import { formatRupiah, formatRupiahShort } from '@/utils/currency'
+import ErrorBoundary from '@/components/common/ErrorBoundary'
 import type { Itinerary } from '@/types'
 
 const ItineraryMap = lazy(() => import('@/components/rencana/ItineraryMap'))
@@ -256,18 +257,29 @@ function ItineraryContent({
           className="rounded-[20px] mb-8 overflow-hidden"
           style={{ border: '1px solid rgba(255,255,255,.15)', height: 400 }}
         >
-          <Suspense
+          <ErrorBoundary
             fallback={
               <div
-                className="h-full flex items-center justify-center text-white/50 text-[14px]"
+                className="h-full flex items-center justify-center text-white/40 text-[14px]"
                 style={{ background: 'rgba(255,255,255,.05)' }}
               >
-                {isEn ? 'Loading map...' : 'Memuat peta...'}
+                {isEn ? 'Map unavailable' : 'Peta tidak tersedia'}
               </div>
             }
           >
-            <ItineraryMap itinerary={itinerary} />
-          </Suspense>
+            <Suspense
+              fallback={
+                <div
+                  className="h-full flex items-center justify-center text-white/50 text-[14px]"
+                  style={{ background: 'rgba(255,255,255,.05)' }}
+                >
+                  {isEn ? 'Loading map...' : 'Memuat peta...'}
+                </div>
+              }
+            >
+              <ItineraryMap itinerary={itinerary} />
+            </Suspense>
+          </ErrorBoundary>
         </div>
 
         {/* CTA buttons */}

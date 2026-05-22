@@ -4,6 +4,7 @@ import { Suspense, lazy } from 'react'
 
 import Layout from '@/components/layout/Layout'
 import NotFoundPage from '@/pages/NotFoundPage'
+import ErrorBoundary from '@/components/common/ErrorBoundary'
 
 // Lazy load pages untuk code splitting
 const HomePage = lazy(() => import('@/pages/HomePage'))
@@ -31,6 +32,16 @@ export default function App() {
   return (
     <HelmetProvider>
       <BrowserRouter>
+        <ErrorBoundary fallback={
+          <div className="min-h-screen flex items-center justify-center bg-[#043545] text-white flex-col gap-4 px-6 text-center">
+            <p className="text-5xl">⚠️</p>
+            <h1 className="serif text-2xl">Terjadi Kesalahan</h1>
+            <p className="text-white/60 text-sm">Muat ulang halaman atau kembali ke beranda.</p>
+            <a href="/" className="px-6 py-3 rounded-full font-semibold text-sm" style={{ background: 'var(--sun)', color: '#1A1A1A' }}>
+              Kembali ke Beranda
+            </a>
+          </div>
+        }>
         <Suspense fallback={<PageLoader />}>
           <Routes>
             {/* Routes dengan layout (Navbar + Footer) */}
@@ -54,6 +65,7 @@ export default function App() {
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Suspense>
+        </ErrorBoundary>
       </BrowserRouter>
     </HelmetProvider>
   )
