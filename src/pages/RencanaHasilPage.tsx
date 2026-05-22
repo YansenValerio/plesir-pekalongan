@@ -1,6 +1,6 @@
 import { lazy, Suspense, useRef, useState } from 'react'
 import { useNavigate, Navigate } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
+import i18n from '@/i18n'
 import { useTripStore } from '@/stores/tripStore'
 import { formatRupiah, formatRupiahShort } from '@/utils/currency'
 import ErrorBoundary from '@/components/common/ErrorBoundary'
@@ -19,7 +19,6 @@ function fmtDate(dateStr: string, isEn: boolean): string {
 
 export default function RencanaHasilPage() {
   const navigate = useNavigate()
-  const { i18n } = useTranslation()
   const isEn = i18n.language === 'en'
   const itinerary = useTripStore(s => s.itinerary)
   const data = useTripStore(s => s.data)
