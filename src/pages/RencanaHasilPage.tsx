@@ -21,11 +21,9 @@ export default function RencanaHasilPage() {
   const navigate = useNavigate()
   const { i18n } = useTranslation()
   const isEn = i18n.language === 'en'
-  const { itinerary, data, reset } = useTripStore(s => ({
-    itinerary: s.itinerary,
-    data: s.data,
-    reset: s.reset,
-  }))
+  const itinerary = useTripStore(s => s.itinerary)
+  const data = useTripStore(s => s.data)
+  const reset = useTripStore(s => s.reset)
 
   const printRef = useRef<HTMLDivElement>(null)
   const [isExporting, setIsExporting] = useState(false)
