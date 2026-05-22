@@ -1,9 +1,11 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useDestinasiList } from '@/hooks/useSupabaseData'
 import { formatRupiah } from '@/utils/currency'
 import { CATEGORIES, WILAYAH_LABELS, type KategoriId } from '@/constants'
+
+const PAGE_SIZE = 9
 import type { Destinasi } from '@/types'
 import Icon from '@/components/common/Icon'
 
@@ -26,7 +28,10 @@ interface Props {
 export default function DestinasiListing({ initialKategori = 'all' }: Props) {
   const [cat, setCat] = useState<KategoriId | 'all'>(initialKategori)
   const [q, setQ] = useState('')
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE)
   const navigate = useNavigate()
+
+  useEffect(() => { setVisibleCount(PAGE_SIZE) }, [cat, q])
   const { t, i18n } = useTranslation()
   const isEn = i18n.language === 'en'
   const { data: destinasiData, loading } = useDestinasiList()
@@ -125,17 +130,31 @@ export default function DestinasiListing({ initialKategori = 'all' }: Props) {
             </button>
           </div>
         ) : (
-          // Original: .dest-grid — 3 columns, gap:24px
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filtered.map(d => (
-              <DestinasiCard
-                key={d.id}
-                d={d}
-                isEn={isEn}
-                onNavigate={() => navigate(`/destinasi/${d.kategori}/${d.id}`)}
-              />
-            ))}
-          </div>
+          <>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filtered.slice(0, visibleCount).map(d => (
+                <DestinasiCard
+                  key={d.id}
+                  d={d}
+                  isEn={isEn}
+                  onNavigate={() => navigate(`/destinasi/${d.kategori}/${d.id}`)}
+                />
+              ))}
+            </div>
+            {visibleCount < filtered.length && (
+              <div className="flex justify-center mt-10">
+                <button
+                  onClick={() => setVisibleCount(v => v + PAGE_SIZE)}
+                  className="btn btn-ghost px-8"
+                >
+                  {isEn ? 'Load More' : 'Muat Lebih Banyak'}
+                  <span className="ml-2 text-text-muted text-[13px]">
+                    ({filtered.length - visibleCount} {isEn ? 'remaining' : 'tersisa'})
+                  </span>
+                </button>
+              </div>
+            )}
+          </>
         )}
       </div>
     </>

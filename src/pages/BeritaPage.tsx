@@ -1,10 +1,12 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useBeritaList } from '@/hooks/useSupabaseData'
 import Icon from '@/components/common/Icon'
 import PageMeta from '@/components/common/PageMeta'
 import type { Berita } from '@/types'
+
+const PAGE_SIZE = 9
 
 type SortMode = 'terbaru' | 'terpopuler' | 'editor'
 type KategoriId = Berita['kategori'] | 'all'
@@ -33,6 +35,7 @@ export default function BeritaPage() {
   const [cat, setCat] = useState<KategoriId>('all')
   const [sort, setSort] = useState<SortMode>('terbaru')
   const [q, setQ] = useState('')
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE)
   const navigate = useNavigate()
   const { i18n } = useTranslation()
   const isEn = i18n.language === 'en'
@@ -53,6 +56,8 @@ export default function BeritaPage() {
     if (sort === 'editor') list = list.filter(b => b.is_featured)
     return list
   }, [beritaData, cat, sort, q, isEn])
+
+  useEffect(() => { setVisibleCount(PAGE_SIZE) }, [cat, sort, q])
 
   if (loading) return (
     <div className="min-h-screen flex items-center justify-center">
@@ -149,12 +154,26 @@ export default function BeritaPage() {
             </button>
           </div>
         ) : (
-          // Original: .berita-grid — 3-col, gap 20px
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {filtered.map(b => (
-              <BeritaCard key={b.id} b={b} isEn={isEn} onClick={() => navigate(`/berita/${b.slug}`)} />
-            ))}
-          </div>
+          <>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {filtered.slice(0, visibleCount).map(b => (
+                <BeritaCard key={b.id} b={b} isEn={isEn} onClick={() => navigate(`/berita/${b.slug}`)} />
+              ))}
+            </div>
+            {visibleCount < filtered.length && (
+              <div className="flex justify-center mt-10">
+                <button
+                  onClick={() => setVisibleCount(v => v + PAGE_SIZE)}
+                  className="btn btn-ghost px-8"
+                >
+                  {isEn ? 'Load More' : 'Muat Lebih Banyak'}
+                  <span className="ml-2 text-text-muted text-[13px]">
+                    ({filtered.length - visibleCount} {isEn ? 'remaining' : 'tersisa'})
+                  </span>
+                </button>
+              </div>
+            )}
+          </>
         )}
       </div>
     </>

@@ -148,50 +148,37 @@ export default function KontakPage() {
           <div>
             <ContactForm isEn={isEn} />
 
-            {/* Map card placeholder — Original: gradient card with location icon */}
+            {/* Google Maps embed */}
             <div
               className="rounded-2xl overflow-hidden mt-4"
               style={{ border: '1px solid var(--line)' }}
             >
-              <div
-                className="relative grid place-items-center text-white"
-                style={{ aspectRatio: '16/9', background: 'linear-gradient(135deg, var(--primary), var(--secondary))' }}
-              >
-                {/* Grid pattern overlay */}
-                <svg
-                  width="100%" height="100%"
-                  viewBox="0 0 800 450"
-                  className="absolute inset-0 opacity-[0.12] pointer-events-none"
-                >
-                  <defs>
-                    <pattern id="grid-kontak" width="40" height="40" patternUnits="userSpaceOnUse">
-                      <path d="M40 0 L0 0 0 40" stroke="#fff" strokeWidth="0.5" fill="none" />
-                    </pattern>
-                  </defs>
-                  <rect width="800" height="450" fill="url(#grid-kontak)" />
-                </svg>
-                <div className="relative z-10 text-center">
-                  <div
-                    className="w-14 h-14 rounded-full inline-grid place-items-center mb-3"
-                    style={{ background: 'var(--sun)', color: 'var(--dark)' }}
-                  >
-                    <Icon name="location" size={28} />
-                  </div>
-                  <div className="font-bold text-[18px]">TIC Kota Pekalongan</div>
-                  <div className="text-[13px] opacity-85 mt-1">{ticInfoData.alamat.jalan}</div>
-                  <div className="text-[12px] opacity-70 mt-1">
-                    {ticInfoData.alamat.kota}, {ticInfoData.alamat.provinsi}
-                  </div>
-                  <a
-                    href={`https://maps.google.com/?q=${ticInfoData.alamat.koordinat.lat},${ticInfoData.alamat.koordinat.lng}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 mt-3 px-4 py-2 rounded-full text-[12px] font-semibold transition-all hover:bg-white/20"
-                    style={{ background: 'rgba(255,255,255,.15)', border: '1px solid rgba(255,255,255,.3)' }}
-                  >
-                    {isEn ? 'Open in Maps →' : 'Buka di Maps →'}
-                  </a>
+              <div style={{ aspectRatio: '16/9', position: 'relative' }}>
+                <iframe
+                  title="Lokasi TIC Pekalongan"
+                  src={`https://www.google.com/maps?q=${ticInfoData.alamat.koordinat.lat},${ticInfoData.alamat.koordinat.lng}&t=&z=17&ie=UTF8&iwloc=&output=embed`}
+                  width="100%"
+                  height="100%"
+                  style={{ position: 'absolute', inset: 0, border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
+              <div className="flex items-center justify-between px-4 py-3" style={{ background: '#f8fafb', borderTop: '1px solid var(--line)' }}>
+                <div className="text-[13px] text-text-muted">
+                  <span className="font-semibold text-primary">TIC Kota Pekalongan</span>
+                  <span className="mx-1.5">·</span>
+                  {ticInfoData.alamat.jalan}
                 </div>
+                <a
+                  href={`https://maps.google.com/?q=${ticInfoData.alamat.koordinat.lat},${ticInfoData.alamat.koordinat.lng}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[12px] font-semibold text-primary hover:text-secondary transition-colors flex-shrink-0 ml-3"
+                >
+                  {isEn ? 'Open in Maps →' : 'Buka di Maps →'}
+                </a>
               </div>
             </div>
           </div>

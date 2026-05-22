@@ -7,6 +7,7 @@ import { formatRupiah } from '@/utils/currency'
 import { CATEGORIES, WILAYAH_LABELS } from '@/constants'
 import type { Destinasi } from '@/types'
 import Icon from '@/components/common/Icon'
+import PageMeta from '@/components/common/PageMeta'
 
 // Helper: format jam_operasional.senin
 function formatJam(d: Destinasi): string {
@@ -85,8 +86,16 @@ export default function DestinasiDetailPage() {
     { id: 'tips',      label: isEn ? 'Tips'         : 'Tips'      },
   ]
 
+  const nama = isEn ? d.nama_en : d.nama
+
   return (
     <div className="bg-[var(--light)] min-h-screen">
+      <PageMeta
+        title={nama}
+        description={d.deskripsi_singkat}
+        image={d.foto_cover}
+        path={`/destinasi/${d.kategori}/${d.id}`}
+      />
 
       {/* ── HERO ──────────────────────────────────────────────────────────── */}
       {/* Original: .ed-hero — min-height:580px, bg-cover, padding:140px 0 60px */}

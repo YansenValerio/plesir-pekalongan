@@ -6,6 +6,7 @@ const NAV = [
   { to: '/admin/destinasi', label: 'Destinasi', icon: '🏖', end: false },
   { to: '/admin/berita', label: 'Berita', icon: '📰', end: false },
   { to: '/admin/event', label: 'Event', icon: '🎉', end: false },
+  { to: '/admin/pesan', label: 'Pesan Masuk', icon: '✉️', end: false },
 ]
 
 export default function AdminLayout() {

@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useEventBySlug, useEventList } from '@/hooks/useSupabaseData'
+import PageMeta from '@/components/common/PageMeta'
 import { formatRupiah } from '@/utils/currency'
 import Icon from '@/components/common/Icon'
 import { formatTanggal, getStatusLabel, getStatusStyle, getCatColor, CAT_LABELS, EventCard } from './EventPage'
@@ -146,6 +147,12 @@ export default function EventDetailPage() {
 
   return (
     <>
+      <PageMeta
+        title={judul}
+        description={deskripsiSingkat}
+        image={event.poster}
+        path={`/event/${event.slug}`}
+      />
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
       <div
         className="relative min-h-[500px] flex flex-col justify-end pb-10 text-white bg-cover bg-center"

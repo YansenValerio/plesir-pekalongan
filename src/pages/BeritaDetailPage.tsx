@@ -3,6 +3,7 @@ import { useParams, useNavigate, Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useBeritaBySlug, useBeritaList } from '@/hooks/useSupabaseData'
 import Icon from '@/components/common/Icon'
+import PageMeta from '@/components/common/PageMeta'
 import { BeritaCard, formatBeritaDate } from './BeritaPage'
 import type { Berita } from '@/types'
 
@@ -95,6 +96,13 @@ export default function BeritaDetailPage() {
 
   return (
     <>
+      <PageMeta
+        title={judul}
+        description={excerpt}
+        image={article.cover}
+        path={`/berita/${article.slug}`}
+        type="article"
+      />
       {/* ── Hero — Original: .bd-hero ──────────────────────────────────── */}
       <div
         className="relative text-white"
