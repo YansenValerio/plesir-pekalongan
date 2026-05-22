@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { useDestinasiList } from '@/hooks/useSupabaseData'
 
 // Original: REGIONS from design-reference/data.js
 const REGIONS = [
@@ -82,6 +83,15 @@ export default function DiscoverMap() {
   const navigate = useNavigate()
   const { i18n } = useTranslation()
   const isEn = i18n.language === 'en'
+  const { data: destinasi } = useDestinasiList()
+
+  const countsMap = useMemo(() => {
+    const m: Record<string, number> = {}
+    for (const d of destinasi) {
+      m[d.wilayah] = (m[d.wilayah] ?? 0) + 1
+    }
+    return m
+  }, [destinasi])
 
   const hovered = hover ? REGIONS.find(r => r.id === hover) : null
 
@@ -226,7 +236,7 @@ export default function DiscoverMap() {
                       className="block text-[9px] font-bold tracking-[.1em] uppercase mt-[2px]"
                       style={{ color: '#8a5a2b', fontFamily: '"Plus Jakarta Sans", sans-serif', fontStyle: 'normal' }}
                     >
-                      {r.count}+ tempat
+                      {countsMap[r.id] ?? r.count}+ {isEn ? 'places' : 'tempat'}
                     </small>
                   </div>
                 </button>

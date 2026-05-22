@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { eventData } from '@/data'
+import { useEventList } from '@/hooks/useSupabaseData'
 import { formatDateRange } from '@/utils/date'
 import Icon from '@/components/common/Icon'
 
@@ -17,8 +17,11 @@ export default function EventsSection() {
   const navigate = useNavigate()
   const { i18n } = useTranslation()
   const isEn = i18n.language === 'en'
+  const { data: events, loading } = useEventList()
 
-  const featured = eventData.slice(0, 3)
+  // Prioritize upcoming/ongoing, fill with past if needed
+  const active = events.filter(e => e.status === 'upcoming' || e.status === 'ongoing')
+  const featured = (active.length >= 3 ? active : events).slice(0, 3)
 
   return (
     // Original: .events — bg:#fff
@@ -47,6 +50,9 @@ export default function EventsSection() {
 
         {/* Original: .event-grid — 3 columns, gap:24px */}
         <div className="grid grid-cols-3 gap-6">
+          {loading && featured.length === 0 && [0, 1, 2].map(i => (
+            <div key={i} className="rounded-[16px] overflow-hidden bg-gray-100 animate-pulse" style={{ aspectRatio: '4/5' }} />
+          ))}
           {featured.map(e => (
             <div
               key={e.id}
