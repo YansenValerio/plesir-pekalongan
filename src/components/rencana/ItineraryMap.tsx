@@ -29,14 +29,11 @@ export default function ItineraryMap({ itinerary }: Props) {
   itinerary.hari.forEach((day, dayIndex) => {
     day.aktivitas.forEach((act, actIndex) => {
       if (act.koordinat) {
-        markers.push({
-          lat: act.koordinat.lat,
-          lng: act.koordinat.lng,
-          label: act.tempat,
-          waktu: act.waktu,
-          dayIndex,
-          actIndex,
-        })
+        const lat = Number(act.koordinat.lat)
+        const lng = Number(act.koordinat.lng)
+        if (!isNaN(lat) && !isNaN(lng)) {
+          markers.push({ lat, lng, label: act.tempat, waktu: act.waktu, dayIndex, actIndex })
+        }
       }
     })
   })

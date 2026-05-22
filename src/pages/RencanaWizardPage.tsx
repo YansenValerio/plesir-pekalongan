@@ -91,8 +91,10 @@ export default function RencanaWizardPage() {
     try {
       const result = await generateItinerary(data)
       setItinerary(result)
+      setIsGenerating(false)
       navigate('/rencana/hasil')
-    } catch {
+    } catch (err) {
+      console.error('[Rencana] generateItinerary error:', err)
       setGenError(isEn ? 'Something went wrong. Please try again.' : 'Terjadi kesalahan. Coba lagi.')
       setIsGenerating(false)
     }
