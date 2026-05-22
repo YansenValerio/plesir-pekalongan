@@ -20,6 +20,18 @@ const RencanaWizardPage = lazy(() => import('@/pages/RencanaWizardPage'))
 const RencanaHasilPage = lazy(() => import('@/pages/RencanaHasilPage'))
 const KontakPage = lazy(() => import('@/pages/KontakPage'))
 
+// Admin pages
+const AdminLoginPage    = lazy(() => import('@/pages/admin/AdminLoginPage'))
+const AdminLayout       = lazy(() => import('@/pages/admin/AdminLayout'))
+const AdminDashboard    = lazy(() => import('@/pages/admin/AdminDashboardPage'))
+const ProtectedRoute    = lazy(() => import('@/pages/admin/ProtectedRoute'))
+const DestinasiListPage = lazy(() => import('@/pages/admin/destinasi/DestinasiListPage'))
+const DestinasiFormPage = lazy(() => import('@/pages/admin/destinasi/DestinasiFormPage'))
+const BeritaListPage    = lazy(() => import('@/pages/admin/berita/BeritaListPage'))
+const BeritaFormPage    = lazy(() => import('@/pages/admin/berita/BeritaFormPage'))
+const EventListPage     = lazy(() => import('@/pages/admin/event/EventListPage'))
+const EventFormPage     = lazy(() => import('@/pages/admin/event/EventFormPage'))
+
 function PageLoader() {
   return (
     <div className="min-h-screen flex items-center justify-center">
@@ -63,6 +75,23 @@ export default function App() {
             <Route path="/rencana/hasil" element={<RencanaHasilPage />} />
 
             <Route path="*" element={<NotFoundPage />} />
+
+            {/* Admin panel */}
+            <Route path="/admin/login" element={<AdminLoginPage />} />
+            <Route element={<ProtectedRoute />}>
+              <Route path="/admin" element={<AdminLayout />}>
+                <Route index element={<AdminDashboard />} />
+                <Route path="destinasi" element={<DestinasiListPage />} />
+                <Route path="destinasi/new" element={<DestinasiFormPage />} />
+                <Route path="destinasi/:id/edit" element={<DestinasiFormPage />} />
+                <Route path="berita" element={<BeritaListPage />} />
+                <Route path="berita/new" element={<BeritaFormPage />} />
+                <Route path="berita/:id/edit" element={<BeritaFormPage />} />
+                <Route path="event" element={<EventListPage />} />
+                <Route path="event/new" element={<EventFormPage />} />
+                <Route path="event/:id/edit" element={<EventFormPage />} />
+              </Route>
+            </Route>
           </Routes>
         </Suspense>
         </ErrorBoundary>
