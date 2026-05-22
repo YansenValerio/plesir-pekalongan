@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { useParams, useNavigate, Link } from 'react-router-dom'
+import { useParams, useNavigate, Link, Navigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useEventBySlug, useEventList } from '@/hooks/useSupabaseData'
 import PageMeta from '@/components/common/PageMeta'
@@ -94,15 +94,7 @@ export default function EventDetailPage() {
     </div>
   )
 
-  if (!event) {
-    return (
-      <div className="shell py-20 text-center">
-        <div className="text-5xl mb-4">📅</div>
-        <h2 className="text-2xl font-bold text-primary mb-2">{isEn ? 'Event not found' : 'Event tidak ditemukan'}</h2>
-        <Link to="/event" className="btn btn-primary mt-4">{isEn ? 'Back to Events' : 'Kembali ke Event'}</Link>
-      </div>
-    )
-  }
+  if (!event) return <Navigate to="/404" replace />
 
   const judul = isEn ? event.judul_en : event.judul
   const deskripsiSingkat = isEn ? event.deskripsi_singkat_en : event.deskripsi_singkat

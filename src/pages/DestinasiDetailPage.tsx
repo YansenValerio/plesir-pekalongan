@@ -1,5 +1,5 @@
 import { useState, useRef, type FormEvent } from 'react'
-import { useParams, useNavigate, Link } from 'react-router-dom'
+import { useParams, useNavigate, Link, Navigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useDestinasiById, useDestinasiList, useReviewList } from '@/hooks/useSupabaseData'
 import { useFavoriteStore } from '@/stores/favoriteStore'
@@ -58,16 +58,7 @@ export default function DestinasiDetailPage() {
     </div>
   )
 
-  if (!d) {
-    return (
-      <div className="shell py-[160px] text-center">
-        <h2 className="serif text-[32px] text-primary mb-6">Destinasi tidak ditemukan</h2>
-        <Link to="/destinasi" className="btn btn-primary">
-          <Icon name="arrowL" size={14} /> {isEn ? 'Back to Destinations' : 'Kembali ke Destinasi'}
-        </Link>
-      </div>
-    )
-  }
+  if (!d) return <Navigate to="/404" replace />
 
   const cat = CATEGORIES.find(c => c.id === d.kategori)
   const area = WILAYAH_LABELS[d.wilayah] ?? d.wilayah

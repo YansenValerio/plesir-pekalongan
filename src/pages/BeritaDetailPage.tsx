@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useParams, useNavigate, Link } from 'react-router-dom'
+import { useParams, useNavigate, Link, Navigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useBeritaBySlug, useBeritaList } from '@/hooks/useSupabaseData'
 import Icon from '@/components/common/Icon'
@@ -62,15 +62,7 @@ export default function BeritaDetailPage() {
     </div>
   )
 
-  if (!article) {
-    return (
-      <div className="shell py-20 text-center">
-        <div className="text-5xl mb-4">📰</div>
-        <h2 className="text-2xl font-bold text-primary mb-2">{isEn ? 'Article not found' : 'Artikel tidak ditemukan'}</h2>
-        <Link to="/berita" className="btn btn-primary mt-4">{isEn ? 'Back to News' : 'Kembali ke Berita'}</Link>
-      </div>
-    )
-  }
+  if (!article) return <Navigate to="/404" replace />
 
   const judul = isEn ? article.judul_en : article.judul
   const excerpt = isEn ? article.excerpt_en : article.excerpt
