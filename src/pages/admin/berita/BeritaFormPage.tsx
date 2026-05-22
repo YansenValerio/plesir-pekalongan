@@ -2,6 +2,7 @@ import { useEffect, useState, type FormEvent } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { supabase } from '@/lib/supabase'
 import FormField from '../components/FormField'
+import ImageUpload from '../components/ImageUpload'
 
 const KATEGORI = ['pariwisata', 'budaya', 'kuliner', 'event', 'umkm', 'heritage', 'tips-wisata', 'hidden-gems'] as const
 
@@ -113,7 +114,13 @@ export default function BeritaFormPage() {
             </div>
             <FormField label="Tanggal Publish" required type="date" value={f.tanggal_publish} onChange={set('tanggal_publish')} />
           </div>
-          <FormField label="URL Cover" required value={f.cover} onChange={set('cover')} placeholder="https://..." />
+          <ImageUpload
+            label="Foto Cover" required
+            value={f.cover}
+            onChange={url => setF(prev => ({ ...prev, cover: url }))}
+            folder="berita"
+            hint="Rekomendasi: 1200×800px (landscape)"
+          />
         </div>
 
         {/* Konten */}
@@ -129,7 +136,13 @@ export default function BeritaFormPage() {
         <div className={sectionClass} style={sectionStyle}>
           <h2 className="text-white/70 text-xs font-semibold uppercase tracking-wider">Penulis</h2>
           <FormField label="Nama Penulis" required value={f.author_nama} onChange={set('author_nama')} />
-          <FormField label="URL Foto Penulis" value={f.author_foto} onChange={set('author_foto')} />
+          <ImageUpload
+            label="Foto Penulis"
+            value={f.author_foto}
+            onChange={url => setF(prev => ({ ...prev, author_foto: url }))}
+            folder="berita/author"
+            hint="Rekomendasi: 100×100px (square)"
+          />
           <FormField as="textarea" label="Bio Penulis" rows={2} value={f.author_bio} onChange={set('author_bio')} />
         </div>
 

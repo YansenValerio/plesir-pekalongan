@@ -2,6 +2,8 @@ import { useEffect, useState, type FormEvent } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { supabase } from '@/lib/supabase'
 import FormField from '../components/FormField'
+import ImageUpload from '../components/ImageUpload'
+import GalleryUpload from '../components/GalleryUpload'
 
 const KATEGORI = ['budaya', 'kuliner', 'olahraga', 'seni', 'keagamaan', 'festival'] as const
 const STATUS   = ['upcoming', 'ongoing', 'past'] as const
@@ -171,8 +173,19 @@ export default function EventFormPage() {
         {/* Foto */}
         <div className={sectionClass} style={sectionStyle}>
           <h2 className="text-white/70 text-xs font-semibold uppercase tracking-wider">Foto</h2>
-          <FormField label="URL Poster" required value={f.poster} onChange={set('poster')} placeholder="https://..." />
-          <FormField as="textarea" label="URL Galeri" rows={3} value={f.galeri} onChange={set('galeri')} hint="Satu URL per baris" />
+          <p className="text-white/40 text-xs -mt-2">Rekomendasi: Poster 800×1000px (portrait) · Galeri 800×600px</p>
+          <ImageUpload
+            label="Poster" required
+            value={f.poster}
+            onChange={url => setF(prev => ({ ...prev, poster: url }))}
+            folder="event"
+          />
+          <GalleryUpload
+            label="Galeri"
+            value={f.galeri ? f.galeri.split('\n').filter(Boolean) : []}
+            onChange={urls => setF(prev => ({ ...prev, galeri: urls.join('\n') }))}
+            folder="event"
+          />
         </div>
 
         {/* Lokasi */}
