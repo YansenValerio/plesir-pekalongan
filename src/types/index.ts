@@ -1,5 +1,14 @@
 // TypeScript interfaces — berdasarkan docs/04-data-structure.md
 
+export interface Review {
+  id: string;
+  destinasi_id: string;
+  nama: string;
+  rating: number;
+  komentar: string | null;
+  created_at: string;
+}
+
 export interface Koordinat {
   lat: number;
   lng: number;

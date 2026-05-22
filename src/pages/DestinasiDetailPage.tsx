@@ -1,13 +1,14 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, type FormEvent } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { useDestinasiById, useDestinasiList } from '@/hooks/useSupabaseData'
+import { useDestinasiById, useDestinasiList, useReviewList } from '@/hooks/useSupabaseData'
 import { useFavoriteStore } from '@/stores/favoriteStore'
 import { formatRupiah } from '@/utils/currency'
 import { CATEGORIES, WILAYAH_LABELS } from '@/constants'
 import type { Destinasi } from '@/types'
 import Icon from '@/components/common/Icon'
 import PageMeta from '@/components/common/PageMeta'
+import { supabase } from '@/lib/supabase'
 
 // Helper: format jam_operasional.senin
 function formatJam(d: Destinasi): string {
@@ -42,9 +43,14 @@ export default function DestinasiDetailPage() {
   const [copied, setCopied] = useState(false)
   const tabNavRef = useRef<HTMLDivElement>(null)
   const { isDestinasiSaved, toggleDestinasi } = useFavoriteStore()
+  const [reviewForm, setReviewForm] = useState({ nama: '', rating: 0, komentar: '' })
+  const [submitting, setSubmitting] = useState(false)
+  const [reviewSubmitted, setReviewSubmitted] = useState(false)
+  const [reviewError, setReviewError] = useState<string | null>(null)
 
   const { data: d, loading } = useDestinasiById(slug)
   const { data: allDestinasi } = useDestinasiList()
+  const { data: reviews, loading: reviewsLoading } = useReviewList(d?.id)
 
   if (loading) return (
     <div className="min-h-screen flex items-center justify-center">
@@ -92,7 +98,30 @@ export default function DestinasiDetailPage() {
     { id: 'lokasi',    label: isEn ? 'Location'     : 'Lokasi'    },
     { id: 'fasilitas', label: isEn ? 'Facilities'   : 'Fasilitas' },
     { id: 'tips',      label: isEn ? 'Tips'         : 'Tips'      },
+    { id: 'ulasan',    label: isEn ? `Reviews (${reviews.length})` : `Ulasan (${reviews.length})` },
   ]
+
+  async function handleReviewSubmit(e: FormEvent) {
+    e.preventDefault()
+    if (!reviewForm.rating) { setReviewError(isEn ? 'Please select a rating' : 'Pilih rating terlebih dahulu'); return }
+    setSubmitting(true)
+    setReviewError(null)
+    const { error } = await supabase.from('review').insert({
+      destinasi_id: d!.id,
+      nama: reviewForm.nama,
+      rating: reviewForm.rating,
+      komentar: reviewForm.komentar || null,
+    })
+    setSubmitting(false)
+    if (error) { setReviewError(error.message); return }
+    setReviewSubmitted(true)
+    setReviewForm({ nama: '', rating: 0, komentar: '' })
+  }
+
+  const ratingBars = [5, 4, 3, 2, 1].map(s => ({
+    s,
+    v: reviews.length > 0 ? reviews.filter(r => r.rating === s).length / reviews.length : ratingDistribution(d?.rating ?? 0).find(r => r.s === s)?.v ?? 0,
+  }))
 
   const nama = isEn ? d.nama_en : d.nama
 
@@ -356,6 +385,106 @@ export default function DestinasiDetailPage() {
               </section>
             )}
 
+            {/* ULASAN */}
+            <section id="ulasan">
+              <SectionTitle>{isEn ? 'Reviews' : 'Ulasan Pengunjung'}</SectionTitle>
+
+              {/* Form kirim ulasan */}
+              {reviewSubmitted ? (
+                <div className="p-5 rounded-[14px] bg-[#e6f4ec] border border-[#2d8659]/20 text-[#2d8659] text-sm font-semibold mb-6">
+                  ✓ {isEn ? 'Thank you! Your review has been submitted.' : 'Terima kasih! Ulasan kamu sudah dikirim.'}
+                  <button className="ml-3 underline font-normal" onClick={() => setReviewSubmitted(false)}>
+                    {isEn ? 'Write another' : 'Tulis lagi'}
+                  </button>
+                </div>
+              ) : (
+                <form onSubmit={handleReviewSubmit} className="mb-8 p-5 rounded-[16px] bg-white border border-[var(--line)] flex flex-col gap-4">
+                  <h4 className="font-sans text-[14px] font-bold text-primary">{isEn ? 'Write a Review' : 'Tulis Ulasan'}</h4>
+
+                  {/* Star picker */}
+                  <div>
+                    <label className="block text-[12px] text-text-muted mb-1.5">{isEn ? 'Your Rating' : 'Rating Kamu'} <span className="text-red-500">*</span></label>
+                    <div className="flex gap-1">
+                      {[1, 2, 3, 4, 5].map(s => (
+                        <button
+                          key={s}
+                          type="button"
+                          onClick={() => setReviewForm(prev => ({ ...prev, rating: s }))}
+                          className="text-[28px] transition-transform hover:scale-110"
+                          style={{ color: s <= reviewForm.rating ? 'var(--sun)' : 'var(--line)' }}
+                        >
+                          ★
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-[12px] text-text-muted mb-1.5">{isEn ? 'Your Name' : 'Nama Kamu'} <span className="text-red-500">*</span></label>
+                    <input
+                      required
+                      value={reviewForm.nama}
+                      onChange={e => setReviewForm(prev => ({ ...prev, nama: e.target.value }))}
+                      placeholder={isEn ? 'e.g. Budi Santoso' : 'cth. Budi Santoso'}
+                      className="w-full px-3 py-2 rounded-[10px] text-sm border border-[var(--line)] outline-none focus:border-primary transition-colors"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-[12px] text-text-muted mb-1.5">{isEn ? 'Comment (optional)' : 'Komentar (opsional)'}</label>
+                    <textarea
+                      rows={3}
+                      value={reviewForm.komentar}
+                      onChange={e => setReviewForm(prev => ({ ...prev, komentar: e.target.value }))}
+                      placeholder={isEn ? 'Share your experience...' : 'Ceritakan pengalamanmu...'}
+                      className="w-full px-3 py-2 rounded-[10px] text-sm border border-[var(--line)] outline-none focus:border-primary transition-colors resize-none"
+                    />
+                  </div>
+
+                  {reviewError && <p className="text-red-500 text-sm">{reviewError}</p>}
+
+                  <button
+                    type="submit"
+                    disabled={submitting}
+                    className="btn btn-primary self-start disabled:opacity-50"
+                  >
+                    {submitting ? (isEn ? 'Sending...' : 'Mengirim...') : (isEn ? 'Send Review' : 'Kirim Ulasan')}
+                  </button>
+                </form>
+              )}
+
+              {/* Daftar review */}
+              {reviewsLoading ? (
+                <div className="flex justify-center py-8">
+                  <div className="w-6 h-6 rounded-full border-2 border-primary border-t-transparent animate-spin" />
+                </div>
+              ) : reviews.length === 0 ? (
+                <p className="text-text-muted text-sm text-center py-8">
+                  {isEn ? 'No reviews yet. Be the first!' : 'Belum ada ulasan. Jadilah yang pertama!'}
+                </p>
+              ) : (
+                <div className="flex flex-col gap-4">
+                  {reviews.map(r => (
+                    <div key={r.id} className="flex gap-4 p-4 rounded-[14px] bg-white border border-[var(--line)]">
+                      <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold bg-accent text-primary">
+                        {r.nama.charAt(0).toUpperCase()}
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-center gap-2 flex-wrap mb-1">
+                          <span className="font-semibold text-[14px] text-primary">{r.nama}</span>
+                          <span className="text-sun text-[13px]">{'★'.repeat(r.rating)}{'☆'.repeat(5 - r.rating)}</span>
+                          <span className="text-text-muted text-[11px] ml-auto">
+                            {new Date(r.created_at).toLocaleDateString(isEn ? 'en-US' : 'id-ID', { dateStyle: 'medium' })}
+                          </span>
+                        </div>
+                        {r.komentar && <p className="text-[13px] text-text leading-[1.6] m-0">{r.komentar}</p>}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </section>
+
             {/* SHARE */}
             <section>
               <SectionTitle>{isEn ? 'Share This Destination' : 'Bagikan Destinasi Ini'}</SectionTitle>
@@ -419,7 +548,7 @@ export default function DestinasiDetailPage() {
               </div>
               {/* Rating bars */}
               <div className="flex flex-col gap-1.5">
-                {ratingDistribution(d.rating).map(r => (
+                {ratingBars.map(r => (
                   <div key={r.s} className="flex items-center gap-2 text-[12px]">
                     <span className="w-3 text-text-muted font-semibold">{r.s}</span>
                     <div className="flex-1 h-[6px] bg-[var(--line)] rounded-full overflow-hidden">

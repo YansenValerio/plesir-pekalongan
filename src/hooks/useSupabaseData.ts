@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { supabase } from '@/lib/supabase'
-import type { Destinasi, Berita, Event, FAQ } from '@/types'
+import type { Destinasi, Berita, Event, FAQ, Review } from '@/types'
 
 interface AsyncState<T> {
   data: T
@@ -85,6 +85,22 @@ export function useEventBySlug(slug: string | undefined): AsyncState<Event | nul
         setState({ data: data as Event | null, loading: false, error: error?.message ?? null })
       })
   }, [slug])
+
+  return state
+}
+
+export function useReviewList(destinasiId: string | undefined): AsyncState<Review[]> {
+  const [state, setState] = useState<AsyncState<Review[]>>({ data: [], loading: true, error: null })
+
+  useEffect(() => {
+    if (!destinasiId) { setState({ data: [], loading: false, error: null }); return }
+    supabase.from('review').select('*')
+      .eq('destinasi_id', destinasiId)
+      .order('created_at', { ascending: false })
+      .then(({ data, error }) => {
+        setState({ data: (data as Review[]) ?? [], loading: false, error: error?.message ?? null })
+      })
+  }, [destinasiId])
 
   return state
 }
