@@ -256,10 +256,25 @@ export default function EventDetailPage() {
           {isEn ? 'Add to Calendar' : 'Tambah ke Kalender'}
         </button>
 
-        {/* Share */}
+        {/* Share — social + copy */}
+        <a
+          href={`https://wa.me/?text=${encodeURIComponent(judul + ' — ' + window.location.href)}`}
+          target="_blank" rel="noopener noreferrer"
+          className="btn btn-ghost flex items-center gap-2"
+          style={{ color: '#25D366' }}
+        >
+          💬 WhatsApp
+        </a>
+        <a
+          href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(judul)}&url=${encodeURIComponent(window.location.href)}`}
+          target="_blank" rel="noopener noreferrer"
+          className="btn btn-ghost flex items-center gap-2"
+        >
+          <Icon name="twitter" size={15} /> Twitter
+        </a>
         <button onClick={handleShare} className="btn btn-ghost flex items-center gap-2">
           <Icon name={copied ? 'check' : 'share'} size={16} />
-          {copied ? (isEn ? 'Copied!' : 'Tersalin!') : (isEn ? 'Share' : 'Bagikan')}
+          {copied ? (isEn ? 'Copied!' : 'Tersalin!') : (isEn ? 'Copy Link' : 'Copy Link')}
         </button>
       </div>
 

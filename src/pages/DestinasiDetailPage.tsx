@@ -39,6 +39,7 @@ export default function DestinasiDetailPage() {
   const isEn = i18n.language === 'en'
   const [lightbox, setLightbox] = useState<string | null>(null)
   const [activeTab, setActiveTab] = useState('tentang')
+  const [copied, setCopied] = useState(false)
   const tabNavRef = useRef<HTMLDivElement>(null)
   const { isDestinasiSaved, toggleDestinasi } = useFavoriteStore()
 
@@ -68,6 +69,13 @@ export default function DestinasiDetailPage() {
   const isSaved = isDestinasiSaved(d.id)
   const shareUrl = `https://plesirpekalongan.id/destinasi/${d.kategori}/${d.id}`
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(d.nama + ' Pekalongan')}`
+
+  function handleCopy() {
+    navigator.clipboard?.writeText(shareUrl).then(() => {
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    })
+  }
 
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id)
@@ -181,9 +189,10 @@ export default function DestinasiDetailPage() {
               <button
                 className="btn px-6 py-3.5 text-white"
                 style={{ background: 'rgba(255,255,255,.15)', border: '1px solid rgba(255,255,255,.3)' }}
-                onClick={() => navigator.clipboard?.writeText(shareUrl)}
+                onClick={handleCopy}
               >
-                <Icon name="share" size={16} /> {isEn ? 'Share' : 'Bagikan'}
+                <Icon name={copied ? 'check' : 'share'} size={16} />
+                {copied ? (isEn ? 'Copied!' : 'Tersalin!') : (isEn ? 'Share' : 'Bagikan')}
               </button>
             </div>
           </div>
@@ -382,9 +391,10 @@ export default function DestinasiDetailPage() {
                 ))}
                 <button
                   className="btn btn-ghost text-[13px] px-5 py-3"
-                  onClick={() => navigator.clipboard?.writeText(shareUrl)}
+                  onClick={handleCopy}
                 >
-                  <Icon name="share" size={15} /> {isEn ? 'Copy Link' : 'Copy Link'}
+                  <Icon name={copied ? 'check' : 'share'} size={15} />
+                  {copied ? (isEn ? 'Copied!' : 'Tersalin!') : 'Copy Link'}
                 </button>
               </div>
             </section>
