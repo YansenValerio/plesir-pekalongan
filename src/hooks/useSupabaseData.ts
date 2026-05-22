@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { supabase } from '@/lib/supabase'
-import type { Destinasi, Berita, Event } from '@/types'
+import type { Destinasi, Berita, Event, FAQ } from '@/types'
 
 interface AsyncState<T> {
   data: T
@@ -85,6 +85,19 @@ export function useEventBySlug(slug: string | undefined): AsyncState<Event | nul
         setState({ data: data as Event | null, loading: false, error: error?.message ?? null })
       })
   }, [slug])
+
+  return state
+}
+
+export function useFaqList(): AsyncState<FAQ[]> {
+  const [state, setState] = useState<AsyncState<FAQ[]>>({ data: [], loading: true, error: null })
+
+  useEffect(() => {
+    supabase.from('faq').select('*').order('urutan')
+      .then(({ data, error }) => {
+        setState({ data: (data as FAQ[]) ?? [], loading: false, error: error?.message ?? null })
+      })
+  }, [])
 
   return state
 }

@@ -1,9 +1,10 @@
 import { useState, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { faqData, ticInfoData } from '@/data'
+import { ticInfoData } from '@/data'
 import Icon from '@/components/common/Icon'
 import PageMeta from '@/components/common/PageMeta'
 import { supabase } from '@/lib/supabase'
+import { useFaqList } from '@/hooks/useSupabaseData'
 import type { FAQ } from '@/types'
 
 type FAQKategori = FAQ['kategori'] | 'all'
@@ -309,6 +310,7 @@ function FAQSection({ isEn }: { isEn: boolean }) {
   const [cat, setCat] = useState<FAQKategori>('all')
   const [q, setQ] = useState('')
   const [openId, setOpenId] = useState<string | null>(null)
+  const { data: faqData } = useFaqList()
 
   const filtered = useMemo(() => {
     return faqData
