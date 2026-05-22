@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { faqData, ticInfoData } from '@/data'
 import Icon from '@/components/common/Icon'
 import PageMeta from '@/components/common/PageMeta'
+import { supabase } from '@/lib/supabase'
 import type { FAQ } from '@/types'
 
 type FAQKategori = FAQ['kategori'] | 'all'
@@ -207,14 +208,27 @@ export default function KontakPage() {
 
 function ContactForm({ isEn }: { isEn: boolean }) {
   const [submitted, setSubmitted] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [sendError, setSendError] = useState<string | null>(null)
   const [form, setForm] = useState({ nama: '', email: '', subjek: '0', pesan: '' })
 
-  function handleSubmit(e: React.FormEvent) {
+  const subjects = isEn ? SUBJECTS_EN : SUBJECTS_ID
+
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
+    setSending(true)
+    setSendError(null)
+    const subjekText = subjects[Number(form.subjek)] ?? subjects[0]
+    const { error } = await supabase.from('pesan_kontak').insert({
+      nama: form.nama,
+      email: form.email,
+      subjek: subjekText,
+      pesan: form.pesan,
+    })
+    setSending(false)
+    if (error) { setSendError(error.message); return }
     setSubmitted(true)
   }
-
-  const subjects = isEn ? SUBJECTS_EN : SUBJECTS_ID
 
   return (
     <div className="rounded-2xl p-8" style={{ background: '#fff', border: '1px solid var(--line)' }}>
@@ -290,8 +304,11 @@ function ContactForm({ isEn }: { isEn: boolean }) {
               style={{ minHeight: 140, resize: 'vertical' }}
             />
           </FormGroup>
-          <button type="submit" className="btn btn-primary w-full justify-center">
-            {isEn ? 'Send Message' : 'Kirim Pesan'}
+          {sendError && (
+            <p className="text-red-600 text-[13px] bg-red-50 px-4 py-2 rounded-xl">{sendError}</p>
+          )}
+          <button type="submit" disabled={sending} className="btn btn-primary w-full justify-center disabled:opacity-60">
+            {sending ? (isEn ? 'Sending...' : 'Mengirim...') : (isEn ? 'Send Message' : 'Kirim Pesan')}
           </button>
         </form>
       )}
