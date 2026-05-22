@@ -9,6 +9,7 @@ import type { Destinasi } from '@/types'
 import Icon from '@/components/common/Icon'
 import PageMeta from '@/components/common/PageMeta'
 import { supabase } from '@/lib/supabase'
+import { imgUrl } from '@/utils/image'
 
 // Helper: format jam_operasional.senin
 function formatJam(d: Destinasi): string {
@@ -129,7 +130,7 @@ export default function DestinasiDetailPage() {
       {/* Original: .ed-hero — min-height:580px, bg-cover, padding:140px 0 60px */}
       <div
         className="relative min-h-[580px] pt-[140px] pb-[60px] text-white bg-cover bg-center"
-        style={{ backgroundImage: `linear-gradient(180deg, rgba(10,77,104,.15) 0%, rgba(4,28,38,.88) 100%), url(${d.foto_cover})` }}
+        style={{ backgroundImage: `linear-gradient(180deg, rgba(10,77,104,.15) 0%, rgba(4,28,38,.88) 100%), url(${imgUrl(d.foto_cover, 1400)})` }}
       >
         <div className="shell">
           <div className="flex flex-col gap-3.5 max-w-[920px]">
@@ -280,7 +281,7 @@ export default function DestinasiDetailPage() {
                     <div
                       key={i}
                       className={`relative rounded-[12px] overflow-hidden cursor-pointer bg-cover bg-center group ${i === 0 ? 'col-span-2' : ''}`}
-                      style={{ aspectRatio: i === 0 ? '16/9' : '1/1', backgroundImage: `url(${g})` }}
+                      style={{ aspectRatio: i === 0 ? '16/9' : '1/1', backgroundImage: `url(${imgUrl(g, 800)})` }}
                       onClick={() => setLightbox(g)}
                     >
                       <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
@@ -607,7 +608,7 @@ export default function DestinasiDetailPage() {
                     className="bg-white rounded-[16px] overflow-hidden cursor-pointer border border-[var(--line)] transition-all duration-[250ms] hover:-translate-y-1 hover:shadow-[0_16px_32px_rgba(0,0,0,.08)]"
                     onClick={() => navigate(`/destinasi/${r.kategori}/${r.id}`)}
                   >
-                    <div className="relative bg-cover bg-center" style={{ aspectRatio: '4/3', backgroundImage: `url(${r.foto_cover})` }}>
+                    <div className="relative bg-cover bg-center" style={{ aspectRatio: '4/3', backgroundImage: `url(${imgUrl(r.foto_cover, 600)})` }}>
                       <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 50%, rgba(0,0,0,.6))' }} />
                       <span className="absolute top-3.5 left-3.5 z-[2] px-2.5 py-1 bg-white/95 rounded-[6px] text-[11px] font-bold text-primary">
                         {rCat?.icon} {isEn ? rCat?.label_en : rCat?.label}

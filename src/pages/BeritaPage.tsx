@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useBeritaList } from '@/hooks/useSupabaseData'
 import Icon from '@/components/common/Icon'
+import { imgUrl } from '@/utils/image'
 import PageMeta from '@/components/common/PageMeta'
 import type { Berita } from '@/types'
 
@@ -189,7 +190,7 @@ function FeaturedCard({ b, isEn, onClick }: { b: Berita; isEn: boolean; onClick:
   return (
     <div
       className="relative rounded-2xl overflow-hidden cursor-pointer mb-8 group"
-      style={{ aspectRatio: '16/7', backgroundImage: `url(${b.cover})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+      style={{ aspectRatio: '16/7', backgroundImage: `url(${imgUrl(b.cover, 1200)})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
       onClick={() => onClick(b.slug)}
     >
       <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 20%, rgba(0,0,0,.88))' }} />
@@ -212,7 +213,7 @@ function FeaturedCard({ b, isEn, onClick }: { b: Berita; isEn: boolean; onClick:
         </p>
         <div className="flex items-center gap-4 mt-4 text-[12px] text-white/70">
           {b.author.foto && (
-            <img src={b.author.foto} alt="" className="w-7 h-7 rounded-full border-2 border-sun object-cover" />
+            <img src={imgUrl(b.author.foto, 100)} alt="" loading="lazy" className="w-7 h-7 rounded-full border-2 border-sun object-cover" />
           )}
           <span>{b.author.nama}</span>
           <span className="w-px h-4 bg-white/30" />
@@ -238,7 +239,7 @@ export function BeritaCard({ b, isEn, onClick }: { b: Berita; isEn: boolean; onC
   return (
     <div
       className="relative rounded-[12px] overflow-hidden cursor-pointer group hover:shadow-[0_16px_40px_rgba(0,0,0,.15)] transition-all duration-[250ms]"
-      style={{ aspectRatio: '3/4', backgroundImage: `url(${b.cover})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+      style={{ aspectRatio: '3/4', backgroundImage: `url(${imgUrl(b.cover, 600)})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
       onClick={onClick}
     >
       {/* Gradient overlay */}

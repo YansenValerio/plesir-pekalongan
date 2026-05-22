@@ -3,6 +3,7 @@ import { useParams, useNavigate, Link, Navigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useEventBySlug, useEventList } from '@/hooks/useSupabaseData'
 import PageMeta from '@/components/common/PageMeta'
+import { imgUrl } from '@/utils/image'
 import { formatRupiah } from '@/utils/currency'
 import Icon from '@/components/common/Icon'
 import { formatTanggal, getStatusLabel, getStatusStyle, getCatColor, CAT_LABELS, EventCard } from './EventPage'
@@ -148,7 +149,7 @@ export default function EventDetailPage() {
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
       <div
         className="relative min-h-[500px] flex flex-col justify-end pb-10 text-white bg-cover bg-center"
-        style={{ backgroundImage: `url(${event.poster})` }}
+        style={{ backgroundImage: `url(${imgUrl(event.poster, 1400)})` }}
       >
         {/* Dark gradient overlay */}
         <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,.2) 0%, rgba(0,0,0,.75) 100%)' }} />
@@ -481,7 +482,7 @@ export default function EventDetailPage() {
                       style={{ aspectRatio: '4/3' }}
                       onClick={() => setLightboxImg(img)}
                     >
-                      <img src={img} alt="" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                      <img src={imgUrl(img, 800)} alt="" loading="lazy" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
                         <Icon name="plus" size={24} className="text-white opacity-0 group-hover:opacity-100 transition-opacity" />
                       </div>

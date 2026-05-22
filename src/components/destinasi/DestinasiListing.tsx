@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useDestinasiList } from '@/hooks/useSupabaseData'
 import { formatRupiah } from '@/utils/currency'
+import { imgUrl } from '@/utils/image'
 import { CATEGORIES, WILAYAH_LABELS, type KategoriId } from '@/constants'
 
 const PAGE_SIZE = 9
@@ -175,7 +176,7 @@ function DestinasiCard({ d, isEn, onNavigate }: { d: Destinasi; isEn: boolean; o
       {/* Original: .dest-cover — aspect-ratio:4/3 */}
       <div
         className="relative bg-cover bg-center"
-        style={{ aspectRatio: '4/3', backgroundImage: `url(${d.foto_cover})` }}
+        style={{ aspectRatio: '4/3', backgroundImage: `url(${imgUrl(d.foto_cover, 600)})` }}
       >
         {/* Gradient overlay */}
         <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 50%, rgba(0,0,0,.6))' }} />

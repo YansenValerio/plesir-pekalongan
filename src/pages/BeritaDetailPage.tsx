@@ -3,6 +3,7 @@ import { useParams, useNavigate, Link, Navigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useBeritaBySlug, useBeritaList } from '@/hooks/useSupabaseData'
 import Icon from '@/components/common/Icon'
+import { imgUrl } from '@/utils/image'
 import PageMeta from '@/components/common/PageMeta'
 import { BeritaCard, formatBeritaDate } from './BeritaPage'
 import type { Berita } from '@/types'
@@ -102,7 +103,7 @@ export default function BeritaDetailPage() {
           minHeight: 560,
           paddingTop: 140,
           paddingBottom: 60,
-          backgroundImage: `linear-gradient(180deg, rgba(10,77,104,.5) 0%, rgba(4,28,38,.85) 100%), url(${article.cover})`,
+          backgroundImage: `linear-gradient(180deg, rgba(10,77,104,.5) 0%, rgba(4,28,38,.85) 100%), url(${imgUrl(article.cover, 1400)})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -140,8 +141,9 @@ export default function BeritaDetailPage() {
               <div className="flex items-center gap-3">
                 {article.author.foto && (
                   <img
-                    src={article.author.foto}
+                    src={imgUrl(article.author.foto, 100)}
                     alt=""
+                    loading="lazy"
                     className="w-11 h-11 rounded-full object-cover border-2 border-sun"
                   />
                 )}
@@ -278,8 +280,9 @@ export default function BeritaDetailPage() {
               <div className="flex items-start gap-5">
                 {article.author.foto && (
                   <img
-                    src={article.author.foto}
+                    src={imgUrl(article.author.foto, 100)}
                     alt=""
+                    loading="lazy"
                     className="w-16 h-16 rounded-full object-cover border-2 border-sun flex-shrink-0"
                   />
                 )}

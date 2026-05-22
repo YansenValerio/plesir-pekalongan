@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { useEventList } from '@/hooks/useSupabaseData'
 import { formatDateRange } from '@/utils/date'
 import Icon from '@/components/common/Icon'
+import { imgUrl } from '@/utils/image'
 
 // Badge colors matching design-reference/styles.css
 const BADGE_COLORS: Record<string, string> = {
@@ -64,7 +65,7 @@ export default function EventsSection() {
               {/* Original: .event-cover — aspect-ratio:4/5, bg-cover, with gradient overlay */}
               <div
                 className="relative bg-cover bg-center"
-                style={{ aspectRatio: '4/5', backgroundImage: `url(${e.poster})` }}
+                style={{ aspectRatio: '4/5', backgroundImage: `url(${imgUrl(e.poster, 600)})` }}
               >
                 {/* Gradient overlay */}
                 <div
