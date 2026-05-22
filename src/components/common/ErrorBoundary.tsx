@@ -7,16 +7,23 @@ interface Props {
 
 interface State {
   hasError: boolean
+  message: string
 }
 
 export default class ErrorBoundary extends Component<Props, State> {
   constructor(props: Props) {
     super(props)
-    this.state = { hasError: false }
+    this.state = { hasError: false, message: '' }
   }
 
-  static getDerivedStateFromError(): State {
-    return { hasError: true }
+  static getDerivedStateFromError(error: unknown): State {
+    const message = error instanceof Error ? error.message : String(error)
+    return { hasError: true, message }
+  }
+
+  componentDidCatch(error: unknown, info: { componentStack: string }) {
+    console.error('[ErrorBoundary] Caught error:', error)
+    console.error('[ErrorBoundary] Component stack:', info.componentStack)
   }
 
   render() {
