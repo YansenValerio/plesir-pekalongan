@@ -74,8 +74,6 @@ export default function App() {
             <Route path="/rencana/wizard" element={<RencanaWizardPage />} />
             <Route path="/rencana/hasil" element={<RencanaHasilPage />} />
 
-            <Route path="*" element={<NotFoundPage />} />
-
             {/* Admin panel */}
             <Route path="/admin/login" element={<AdminLoginPage />} />
             <Route element={<ProtectedRoute />}>
@@ -92,6 +90,8 @@ export default function App() {
                 <Route path="event/:id/edit" element={<EventFormPage />} />
               </Route>
             </Route>
+
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Suspense>
         </ErrorBoundary>
