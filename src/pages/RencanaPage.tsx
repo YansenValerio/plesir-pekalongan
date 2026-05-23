@@ -8,6 +8,7 @@ export default function RencanaPage() {
   const { i18n } = useTranslation()
   const isEn = i18n.language === 'en'
   const reset = useTripStore(s => s.reset)
+  const savedItinerary = useTripStore(s => s.itinerary)
 
   function handleStart() {
     reset()
@@ -90,17 +91,29 @@ export default function RencanaPage() {
           ))}
         </div>
 
-        <button
-          onClick={handleStart}
-          className="flex items-center gap-3 px-10 py-4 rounded-full font-bold text-[17px] transition-all duration-200 hover:-translate-y-1"
-          style={{
-            background: 'linear-gradient(135deg, var(--sun), #e09a2c)',
-            color: 'var(--dark)',
-            boxShadow: '0 8px 32px rgba(242,169,59,.3)',
-          }}
-        >
-          {isEn ? 'Start Planning' : 'Mulai Rencanakan'} →
-        </button>
+        <div className="flex flex-col items-center gap-4">
+          <button
+            onClick={handleStart}
+            className="flex items-center gap-3 px-10 py-4 rounded-full font-bold text-[17px] transition-all duration-200 hover:-translate-y-1"
+            style={{
+              background: 'linear-gradient(135deg, var(--sun), #e09a2c)',
+              color: 'var(--dark)',
+              boxShadow: '0 8px 32px rgba(242,169,59,.3)',
+            }}
+          >
+            {isEn ? 'Start Planning' : 'Mulai Rencanakan'} →
+          </button>
+
+          {savedItinerary && (
+            <button
+              onClick={() => navigate('/rencana/hasil')}
+              className="flex items-center gap-2 px-6 py-2.5 rounded-full font-semibold text-[14px] text-white transition-all hover:bg-white/15"
+              style={{ background: 'rgba(255,255,255,.08)', border: '1px solid rgba(255,255,255,.25)' }}
+            >
+              📋 {isEn ? 'View Saved Itinerary' : 'Lihat Itinerary Tersimpan'}
+            </button>
+          )}
+        </div>
 
         <p className="mt-8 text-white/35 text-[12px]">Powered by Google Gemini AI</p>
       </div>
