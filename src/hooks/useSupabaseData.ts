@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { supabase } from '@/lib/supabase'
-import type { Destinasi, Berita, Event, FAQ, Review } from '@/types'
+import type { Destinasi, Berita, Event, FAQ, Review, UserGalleryItem } from '@/types'
 
 interface AsyncState<T> {
   data: T
@@ -101,6 +101,19 @@ export function useReviewList(destinasiId: string | undefined): AsyncState<Revie
         setState({ data: (data as Review[]) ?? [], loading: false, error: error?.message ?? null })
       })
   }, [destinasiId])
+
+  return state
+}
+
+export function useUserGalleryList(): AsyncState<UserGalleryItem[]> {
+  const [state, setState] = useState<AsyncState<UserGalleryItem[]>>({ data: [], loading: true, error: null })
+
+  useEffect(() => {
+    supabase.from('user_gallery').select('*').order('posted_at', { ascending: false })
+      .then(({ data, error }) => {
+        setState({ data: (data as UserGalleryItem[]) ?? [], loading: false, error: error?.message ?? null })
+      })
+  }, [])
 
   return state
 }

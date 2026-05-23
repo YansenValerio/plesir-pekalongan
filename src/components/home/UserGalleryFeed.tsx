@@ -1,22 +1,28 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { userGalleryData } from '@/data'
+import { useUserGalleryList } from '@/hooks/useSupabaseData'
+import { imgUrl } from '@/utils/image'
+import type { UserGalleryItem } from '@/types'
 import Icon from '@/components/common/Icon'
-
-// Unique hashtags for filter chips
-const ALL_TAGS = Array.from(
-  new Set(userGalleryData.flatMap(item => item.hashtags))
-).slice(0, 6)
 
 export default function UserGalleryFeed() {
   const [activeTag, setActiveTag] = useState<string | null>(null)
-  const [lightbox, setLightbox] = useState<typeof userGalleryData[0] | null>(null)
+  const [lightbox, setLightbox] = useState<UserGalleryItem | null>(null)
   const { i18n } = useTranslation()
   const isEn = i18n.language === 'en'
+  const { data: galleryData, loading } = useUserGalleryList()
+
+  // Unique hashtags for filter chips (max 6)
+  const ALL_TAGS = useMemo(
+    () => Array.from(new Set(galleryData.flatMap(item => item.hashtags))).slice(0, 6),
+    [galleryData],
+  )
 
   const filtered = activeTag
-    ? userGalleryData.filter(item => item.hashtags.includes(activeTag))
-    : userGalleryData
+    ? galleryData.filter(item => item.hashtags.includes(activeTag))
+    : galleryData
+
+  if (!loading && galleryData.length === 0) return null
 
   return (
     <section className="py-[100px] bg-[var(--light)]">
@@ -82,7 +88,7 @@ export default function UserGalleryFeed() {
               {/* Image */}
               <div className="relative overflow-hidden">
                 <img
-                  src={item.image}
+                  src={imgUrl(item.image, 600)}
                   alt={item.caption}
                   className="w-full block transition-transform duration-500 group-hover:scale-[1.04]"
                   loading="lazy"
@@ -98,8 +104,9 @@ export default function UserGalleryFeed() {
               <div className="p-3">
                 <div className="flex items-center gap-2 mb-2">
                   <img
-                    src={item.user_avatar}
+                    src={imgUrl(item.user_avatar, 100)}
                     alt={item.username}
+                    loading="lazy"
                     className="w-7 h-7 rounded-full object-cover flex-shrink-0"
                   />
                   <span className="text-[12px] font-semibold text-primary">{item.username}</span>
@@ -140,13 +147,13 @@ export default function UserGalleryFeed() {
             onClick={e => e.stopPropagation()}
           >
             <img
-              src={lightbox.image}
+              src={imgUrl(lightbox.image, 1000)}
               alt={lightbox.caption}
               className="w-full block max-h-[60vh] object-cover"
             />
             <div className="p-5">
               <div className="flex items-center gap-3 mb-3">
-                <img src={lightbox.user_avatar} alt={lightbox.username} className="w-10 h-10 rounded-full object-cover" />
+                <img src={imgUrl(lightbox.user_avatar, 100)} alt={lightbox.username} className="w-10 h-10 rounded-full object-cover" />
                 <div>
                   <div className="font-semibold text-[14px] text-primary">{lightbox.username}</div>
                   <div className="text-[11px] text-text-muted">{new Date(lightbox.posted_at).toLocaleDateString(isEn ? 'en-US' : 'id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}</div>

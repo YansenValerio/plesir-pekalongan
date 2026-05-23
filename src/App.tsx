@@ -34,6 +34,8 @@ const EventFormPage     = lazy(() => import('@/pages/admin/event/EventFormPage')
 const PesanListPage     = lazy(() => import('@/pages/admin/pesan/PesanListPage'))
 const FaqListPage       = lazy(() => import('@/pages/admin/faq/FaqListPage'))
 const FaqFormPage       = lazy(() => import('@/pages/admin/faq/FaqFormPage'))
+const GalleryListPage   = lazy(() => import('@/pages/admin/gallery/GalleryListPage'))
+const GalleryFormPage   = lazy(() => import('@/pages/admin/gallery/GalleryFormPage'))
 
 function PageLoader() {
   return (
@@ -94,6 +96,9 @@ export default function App() {
                 <Route path="faq" element={<FaqListPage />} />
                 <Route path="faq/new" element={<FaqFormPage />} />
                 <Route path="faq/:id/edit" element={<FaqFormPage />} />
+                <Route path="gallery" element={<GalleryListPage />} />
+                <Route path="gallery/new" element={<GalleryFormPage />} />
+                <Route path="gallery/:id/edit" element={<GalleryFormPage />} />
                 <Route path="pesan" element={<PesanListPage />} />
               </Route>
             </Route>
