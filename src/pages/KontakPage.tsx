@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ticInfoData } from '@/data'
 import Icon from '@/components/common/Icon'
@@ -199,8 +199,15 @@ function ContactForm({ isEn }: { isEn: boolean }) {
   const [sending, setSending] = useState(false)
   const [sendError, setSendError] = useState<string | null>(null)
   const [form, setForm] = useState({ nama: '', email: '', subjek: '0', pesan: '' })
+  const [cooldown, setCooldown] = useState(0)
 
   const subjects = isEn ? SUBJECTS_EN : SUBJECTS_ID
+
+  useEffect(() => {
+    if (cooldown <= 0) return
+    const timer = setTimeout(() => setCooldown(c => c - 1), 1000)
+    return () => clearTimeout(timer)
+  }, [cooldown])
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -216,6 +223,7 @@ function ContactForm({ isEn }: { isEn: boolean }) {
     setSending(false)
     if (error) { setSendError(error.message); return }
     setSubmitted(true)
+    setCooldown(30)
   }
 
   return (
@@ -295,8 +303,12 @@ function ContactForm({ isEn }: { isEn: boolean }) {
           {sendError && (
             <p className="text-red-600 text-[13px] bg-red-50 px-4 py-2 rounded-xl">{sendError}</p>
           )}
-          <button type="submit" disabled={sending} className="btn btn-primary w-full justify-center disabled:opacity-60">
-            {sending ? (isEn ? 'Sending...' : 'Mengirim...') : (isEn ? 'Send Message' : 'Kirim Pesan')}
+          <button type="submit" disabled={sending || cooldown > 0} className="btn btn-primary w-full justify-center disabled:opacity-60">
+            {sending
+              ? (isEn ? 'Sending...' : 'Mengirim...')
+              : cooldown > 0
+              ? (isEn ? `Wait ${cooldown}s...` : `Tunggu ${cooldown} detik...`)
+              : (isEn ? 'Send Message' : 'Kirim Pesan')}
           </button>
         </form>
       )}
