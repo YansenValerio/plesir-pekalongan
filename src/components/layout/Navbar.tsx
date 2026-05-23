@@ -6,6 +6,7 @@ import Icon from '@/components/common/Icon'
 import Logo from '@/components/common/Logo'
 import { useLangStore } from '@/stores/langStore'
 import { useScrollDetection } from '@/hooks/useScrollDetection'
+import SearchOverlay from '@/components/common/SearchOverlay'
 
 interface NavbarProps {
   isHome?: boolean
@@ -22,6 +23,7 @@ const CATEGORIES = [
 
 export default function Navbar({ isHome = false }: NavbarProps) {
   const [megaOpen, setMegaOpen] = useState(false)
+  const [searchOpen, setSearchOpen] = useState(false)
   const scrolled = useScrollDetection(60)
   const { t } = useTranslation()
   const { lang, toggleLang } = useLangStore()
@@ -118,11 +120,16 @@ export default function Navbar({ isHome = false }: NavbarProps) {
           </button>
 
           {/* Original: .nav-icon-btn — 38×38, rounded-full, border currentColor */}
-          <button className="w-[38px] h-[38px] rounded-full border border-current grid place-items-center bg-transparent transition-colors duration-200 hover:bg-white/10">
+          <button
+            onClick={() => setSearchOpen(true)}
+            className="w-[38px] h-[38px] rounded-full border border-current grid place-items-center bg-transparent transition-colors duration-200 hover:bg-white/10"
+          >
             <Icon name="search" size={16} />
           </button>
         </div>
       </div>
+
+      {searchOpen && <SearchOverlay onClose={() => setSearchOpen(false)} />}
 
       {/* Original: .mega — absolute, top 100%, bg white, shadow, padding 32px 0, border-top */}
       {megaOpen && (
