@@ -5,28 +5,28 @@ const SLIDES = [
     title: ['Pantai', 'Pasir Kencana'],
     spot: 'Pantai Pasir Kencana',
     area: 'Pekalongan Utara',
-    bg: 'beach,sunset,indonesia,jetty',
+    bg: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80&fit=crop',
     tint: 'rgba(4,28,38,0.45)',
   },
   {
     title: ['Kampung', 'Batik Kauman'],
     spot: 'Kampung Batik Kauman',
     area: 'Pekalongan Timur',
-    bg: 'batik,colorful,javanese,pattern',
+    bg: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80&fit=crop',
     tint: 'rgba(30,10,10,0.4)',
   },
   {
     title: ['Curug', 'Bajing'],
     spot: 'Curug Bajing',
     area: 'Kab. Pekalongan',
-    bg: 'waterfall,jungle,tropical,green',
+    bg: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80&fit=crop',
     tint: 'rgba(4,22,10,0.4)',
   },
   {
     title: ['Pekan Batik', 'Nusantara'],
     spot: 'Pekan Batik Nusantara',
     area: 'Lapangan Jetayu',
-    bg: 'festival,parade,asia,carnival',
+    bg: 'https://images.unsplash.com/photo-1533107862482-0e6974b06ec4?w=1920&q=80&fit=crop',
     tint: 'rgba(20,12,4,0.4)',
   },
 ]
@@ -67,7 +67,7 @@ export default function CinematicHero() {
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: `url(https://source.unsplash.com/1920x1080/?${encodeURIComponent(slide.bg)})`,
+              backgroundImage: `url(${slide.bg})`,
               animation: 'cineKenBurns 14s ease-out infinite alternate',
             }}
           />

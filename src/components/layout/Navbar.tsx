@@ -6,6 +6,7 @@ import Icon from '@/components/common/Icon'
 import Logo from '@/components/common/Logo'
 import { useLangStore } from '@/stores/langStore'
 import { useDarkModeStore } from '@/stores/darkModeStore'
+import { useFavoriteStore } from '@/stores/favoriteStore'
 import { useScrollDetection } from '@/hooks/useScrollDetection'
 import SearchOverlay from '@/components/common/SearchOverlay'
 import ThemeSwitch from '@/components/common/ThemeSwitch'
@@ -30,6 +31,8 @@ export default function Navbar({ isHome = false }: NavbarProps) {
   const { t } = useTranslation()
   const { lang, toggleLang } = useLangStore()
   const { dark } = useDarkModeStore()
+  const { destinasiIds, eventIds } = useFavoriteStore()
+  const favoriteCount = destinasiIds.length + eventIds.length
   const location = useLocation()
   const navigate = useNavigate()
 
@@ -122,6 +125,21 @@ export default function Navbar({ isHome = false }: NavbarProps) {
             <Icon name="globe" size={14} />
             {lang === 'id' ? 'ID' : 'EN'}
           </button>
+
+          {/* Favorit */}
+          <Link
+            to="/favorit"
+            onClick={() => setMegaOpen(false)}
+            className="relative w-[38px] h-[38px] rounded-full border border-current grid place-items-center bg-transparent transition-colors duration-200 hover:bg-white/10"
+            title={lang === 'id' ? 'Favorit saya' : 'My favorites'}
+          >
+            <Icon name="heart" size={16} />
+            {favoriteCount > 0 && (
+              <span className="absolute -top-1 -right-1 min-w-[16px] h-4 px-1 rounded-full text-[10px] font-bold grid place-items-center bg-sun text-dark leading-none">
+                {favoriteCount > 99 ? '99+' : favoriteCount}
+              </span>
+            )}
+          </Link>
 
           {/* Dark mode toggle */}
           <ThemeSwitch />

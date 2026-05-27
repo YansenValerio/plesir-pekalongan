@@ -307,7 +307,7 @@ export default function DestinasiDetailPage() {
                 {/* Map placeholder */}
                 <div
                   className="relative min-h-[280px] bg-cover bg-center"
-                  style={{ backgroundImage: `linear-gradient(135deg, rgba(10,77,104,.35), rgba(8,131,149,.35)), url(https://source.unsplash.com/800x500/?map,satellite,asia)` }}
+                  style={{ backgroundImage: `linear-gradient(135deg, rgba(10,77,104,.35), rgba(8,131,149,.35)), url(https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80&fit=crop)` }}
                 >
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60px] h-[60px]">
                     <div

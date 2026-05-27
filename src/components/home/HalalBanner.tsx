@@ -55,7 +55,6 @@ export default function HalalBanner() {
         <div
           className="relative h-[380px] bg-cover bg-center"
           style={{
-            backgroundImage: `url(https://source.unsplash.com/800x600/?mosque,indonesia,family)`,
             background: 'linear-gradient(135deg, #1a6e8c, #0A4D68)',
           }}
         >
@@ -74,7 +73,7 @@ export default function HalalBanner() {
           {/* Actual image on top */}
           <div
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(https://source.unsplash.com/800x600/?mosque,indonesia,family)` }}
+            style={{ backgroundImage: `url(https://images.unsplash.com/photo-1564769662533-4f00a87b4056?w=800&q=80&fit=crop)` }}
           />
         </div>
       </div>

@@ -48,13 +48,10 @@
 ### A. Fitur Favorit / Wishlist
 - [x] Halaman `/favorit` — tab Destinasi & Event, skeleton loading, empty state + CTA browse, tombol hapus per card
 - [x] Tombol "Simpan" di EventDetailPage (toggle, visual feedback jika tersimpan)
-- [ ] Sinkronisasi favorit ke akun jika user login
+- Favorit disimpan di localStorage — tidak ada login pengguna publik (by design)
 
-### B. Halaman Profil Wisatawan
-- [ ] Login untuk pengguna publik (bukan hanya admin)
-- [ ] Favorit tersimpan permanen ke akun
-- [ ] Histori itinerary per user
-- [ ] Submit review dengan nama terverifikasi
+### ~~B. Halaman Profil Wisatawan~~ — Dibatalkan
+- Tidak ada login untuk pengguna publik (keputusan desain)
 
 ### C. Notifikasi Admin via WhatsApp
 - [ ] Kirim notifikasi pesan baru ke nomor admin via Fonnte / WhatsApp Business API (alternatif lebih simpel dari email)
