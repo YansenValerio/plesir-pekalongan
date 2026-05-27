@@ -130,3 +130,50 @@ export function useFaqList(): AsyncState<FAQ[]> {
 
   return state
 }
+
+export function useDestinasiByIds(ids: string[]): AsyncState<Destinasi[]> {
+  const [state, setState] = useState<AsyncState<Destinasi[]>>({ data: [], loading: true, error: null })
+  const key = ids.join(',')
+
+  useEffect(() => {
+    if (ids.length === 0) { setState({ data: [], loading: false, error: null }); return }
+    supabase.from('destinasi').select('*').in('id', ids)
+      .then(({ data, error }) => {
+        setState({ data: (data as Destinasi[]) ?? [], loading: false, error: error?.message ?? null })
+      })
+  }, [key])
+
+  return state
+}
+
+export function useEventByIds(ids: string[]): AsyncState<Event[]> {
+  const [state, setState] = useState<AsyncState<Event[]>>({ data: [], loading: true, error: null })
+  const key = ids.join(',')
+
+  useEffect(() => {
+    if (ids.length === 0) { setState({ data: [], loading: false, error: null }); return }
+    supabase.from('event').select('*').in('id', ids)
+      .then(({ data, error }) => {
+        setState({ data: (data as Event[]) ?? [], loading: false, error: error?.message ?? null })
+      })
+  }, [key])
+
+  return state
+}
+
+export function useSpotlightData(): AsyncState<Destinasi[]> {
+  const [state, setState] = useState<AsyncState<Destinasi[]>>({ data: [], loading: true, error: null })
+
+  useEffect(() => {
+    supabase
+      .from('destinasi')
+      .select('id, nama, nama_en, deskripsi_singkat, deskripsi_en, foto_cover, kategori')
+      .order('rating', { ascending: false })
+      .limit(6)
+      .then(({ data, error }) => {
+        setState({ data: (data as Destinasi[]) ?? [], loading: false, error: error?.message ?? null })
+      })
+  }, [])
+
+  return state
+}

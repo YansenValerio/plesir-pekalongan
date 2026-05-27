@@ -5,8 +5,10 @@ import { useTranslation } from 'react-i18next'
 import Icon from '@/components/common/Icon'
 import Logo from '@/components/common/Logo'
 import { useLangStore } from '@/stores/langStore'
+import { useDarkModeStore } from '@/stores/darkModeStore'
 import { useScrollDetection } from '@/hooks/useScrollDetection'
 import SearchOverlay from '@/components/common/SearchOverlay'
+import ThemeSwitch from '@/components/common/ThemeSwitch'
 
 interface NavbarProps {
   isHome?: boolean
@@ -27,6 +29,7 @@ export default function Navbar({ isHome = false }: NavbarProps) {
   const scrolled = useScrollDetection(60)
   const { t } = useTranslation()
   const { lang, toggleLang } = useLangStore()
+  const { dark } = useDarkModeStore()
   const location = useLocation()
   const navigate = useNavigate()
 
@@ -39,11 +42,11 @@ export default function Navbar({ isHome = false }: NavbarProps) {
   const navLinkBase =
     'relative px-[14px] py-[10px] text-[14px] font-medium inline-flex items-center gap-[6px] rounded-[8px] cursor-pointer transition-[background] duration-200 select-none'
 
-  const navLinkHover = transparent
+  const navLinkHover = transparent || dark
     ? 'hover:bg-white/10'
     : 'hover:bg-[rgba(10,77,104,0.08)]'
 
-  const navLinkActive = transparent ? 'text-sun' : 'text-secondary'
+  const navLinkActive = transparent || dark ? 'text-sun' : 'text-secondary'
 
   return (
     // Original: .nav — fixed, z-index 100, transition background/shadow/color 0.3s
@@ -51,8 +54,9 @@ export default function Navbar({ isHome = false }: NavbarProps) {
       className={`fixed top-0 left-0 right-0 z-[100] transition-[background,box-shadow,color] duration-300 ${
         transparent
           ? 'bg-transparent text-white'
-          // Original: .nav.solid — rgba(255,255,255,0.95), blur(10px), shadow 0 1px 0 var(--line)
-          : 'bg-[rgba(255,255,255,0.95)] backdrop-blur-[10px] text-primary shadow-[0_1px_0_#E5E7EB]'
+          : dark
+            ? 'bg-[rgba(12,27,38,0.97)] backdrop-blur-[10px] text-white shadow-[0_1px_0_#1e3448]'
+            : 'bg-[rgba(255,255,255,0.95)] backdrop-blur-[10px] text-primary shadow-[0_1px_0_#E5E7EB]'
       }`}
       onMouseLeave={() => setMegaOpen(false)}
     >
@@ -119,6 +123,9 @@ export default function Navbar({ isHome = false }: NavbarProps) {
             {lang === 'id' ? 'ID' : 'EN'}
           </button>
 
+          {/* Dark mode toggle */}
+          <ThemeSwitch />
+
           {/* Original: .nav-icon-btn — 38×38, rounded-full, border currentColor */}
           <button
             onClick={() => setSearchOpen(true)}
@@ -134,7 +141,7 @@ export default function Navbar({ isHome = false }: NavbarProps) {
       {/* Original: .mega — absolute, top 100%, bg white, shadow, padding 32px 0, border-top */}
       {megaOpen && (
         <div
-          className="absolute top-full left-0 right-0 bg-white text-[var(--text)] shadow-[0_20px_40px_rgba(0,0,0,0.12)] py-8 border-t border-line"
+          className={`absolute top-full left-0 right-0 text-[var(--text)] shadow-[0_20px_40px_rgba(0,0,0,0.18)] py-8 border-t border-line ${dark ? 'bg-[#0c1b27]' : 'bg-white'}`}
           onMouseLeave={() => setMegaOpen(false)}
         >
           {/* Original: .mega-grid — max-width 1280px, 5 columns, gap 16px */}
@@ -145,8 +152,7 @@ export default function Navbar({ isHome = false }: NavbarProps) {
                 onClick={() => { navigate(`/destinasi/${cat.id}`); setMegaOpen(false) }}
                 // Original: .mega-card — border line, border-radius 14px, padding 20px
                 // hover: border-color secondary, translateY(-3px), shadow rgba(8,131,149,.15)
-                className="group border border-line rounded-[14px] p-5 cursor-pointer bg-white transition-all duration-200 text-left
-                  hover:border-secondary hover:-translate-y-[3px] hover:shadow-[0_12px_24px_rgba(8,131,149,0.15)]"
+                className={`group border border-line rounded-[14px] p-5 cursor-pointer transition-all duration-200 text-left hover:border-secondary hover:-translate-y-[3px] hover:shadow-[0_12px_24px_rgba(8,131,149,0.15)] ${dark ? 'bg-[#122234]' : 'bg-white'}`}
               >
                 {/* Original: .mega-card .icon — 48×48, border-radius 12px, bg accent (#F5E8C7), font-size 24px */}
                 <div className="w-12 h-12 rounded-[12px] grid place-items-center bg-accent text-2xl mb-[14px]">

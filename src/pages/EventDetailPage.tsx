@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { useParams, useNavigate, Link, Navigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useEventBySlug, useEventList } from '@/hooks/useSupabaseData'
+import { useFavoriteStore } from '@/stores/favoriteStore'
 import PageMeta from '@/components/common/PageMeta'
 import { imgUrl } from '@/utils/image'
 import { formatRupiah } from '@/utils/currency'
@@ -85,6 +86,7 @@ export default function EventDetailPage() {
   const [copied, setCopied] = useState(false)
 
   const sectionRefs = useRef<Record<string, HTMLDivElement | null>>({})
+  const { isEventSaved, toggleEvent } = useFavoriteStore()
 
   const { data: event, loading } = useEventBySlug(slug)
   const { data: allEvents } = useEventList()
@@ -247,6 +249,18 @@ export default function EventDetailPage() {
         >
           <Icon name="calendar" size={16} />
           {isEn ? 'Add to Calendar' : 'Tambah ke Kalender'}
+        </button>
+
+        {/* Simpan ke favorit */}
+        <button
+          onClick={() => toggleEvent(event.id)}
+          className="btn btn-ghost flex items-center gap-2"
+          style={isEventSaved(event.id) ? { background: 'var(--accent)', borderColor: 'var(--sun)', color: 'var(--primary)' } : {}}
+        >
+          <Icon name="heart" size={16} />
+          {isEventSaved(event.id)
+            ? (isEn ? 'Saved' : 'Tersimpan')
+            : (isEn ? 'Save' : 'Simpan')}
         </button>
 
         {/* Share — social + copy */}

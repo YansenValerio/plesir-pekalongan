@@ -19,6 +19,7 @@ const RencanaPage = lazy(() => import('@/pages/RencanaPage'))
 const RencanaWizardPage = lazy(() => import('@/pages/RencanaWizardPage'))
 const RencanaHasilPage = lazy(() => import('@/pages/RencanaHasilPage'))
 const KontakPage = lazy(() => import('@/pages/KontakPage'))
+const FavoritPage = lazy(() => import('@/pages/FavoritPage'))
 
 // Admin pages
 const AdminLoginPage    = lazy(() => import('@/pages/admin/AdminLoginPage'))
@@ -72,6 +73,7 @@ export default function App() {
               <Route path="/berita" element={<BeritaPage />} />
               <Route path="/berita/:slug" element={<BeritaDetailPage />} />
               <Route path="/kontak" element={<KontakPage />} />
+              <Route path="/favorit" element={<FavoritPage />} />
             </Route>
 
             {/* Trip planner — tanpa layout standard (fullscreen wizard) */}

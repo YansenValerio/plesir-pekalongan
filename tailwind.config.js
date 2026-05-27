@@ -4,6 +4,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -46,7 +47,7 @@ export default {
       },
       fontFamily: {
         sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-        serif: ['"Playfair Display"', '"Cormorant Garamond"', 'Georgia', 'serif'],
+        serif: ['"Fraunces"', '"Cormorant Garamond"', 'Georgia', 'serif'],
       },
       maxWidth: {
         shell: '1280px',

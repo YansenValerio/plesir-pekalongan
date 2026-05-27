@@ -19,9 +19,16 @@
     <meta name="twitter:title" content="Plesir Pekalongan — Kota Batik Dunia" />
     <meta name="twitter:description" content="Jelajahi keindahan Pekalongan, Kota Batik Dunia. Temukan destinasi wisata, event budaya, dan buat rencana perjalanan dengan AI." />
     <meta name="twitter:image" content="https://plesirpekalongan.id/og-image.jpg" />
+    <!-- Dark mode: apply class before paint to prevent flash -->
+    <script>
+      try {
+        const s = localStorage.getItem('plesir-dark-mode')
+        if (s && JSON.parse(s).state?.dark) document.documentElement.classList.add('dark')
+      } catch {}
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
   <body>
     <div id="root"></div>
